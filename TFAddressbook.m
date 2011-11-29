@@ -1,12 +1,16 @@
 #import "TFAddressbook.h"
+#import "TFPerson.h"
+#import "TFGroup.h"
 
-@implementation TFAddressBook
+@implementation TFAddressbook
+
+@synthesize _addressbook;
 
 + (TFAddressbook *)sharedAddressbook {
 	static dispatch_once_t onceToken = 0;
-	__strong static TFAddressBook *_addressbook = nil;
+	__strong static TFAddressbook *_addressbook = nil;
 	dispatch_once(&onceToken, ^{
-		_addressbook = [TFAddressBook addressBook];
+		_addressbook = [TFAddressbook addressbook];
 	});
 	return _addressbook;
 }
@@ -30,20 +34,22 @@
 
 - (BOOL)addRecord:(TFRecord *)record {
 	NSError *error;
-	[self addRecord:record error:&error];
+	return [self addRecord:record error:&error];
 }
 
 - (BOOL)addRecord:(TFRecord *)record error:(NSError **)error {
-	return (BOOL)ABAddressBookAddRecord(_addressbook, record.nativeObject, (__bridge CFErrorRef *)error);
+	CFErrorRef err = (__bridge CFErrorRef)*error;
+	return (BOOL)ABAddressBookAddRecord(_addressbook, record.nativeObject, &err);
 }
 
 - (BOOL)removeRecord:(TFRecord *)record {
 	NSError *error;
-	[self removeRecord:record error:&error];
+	return (BOOL)[self removeRecord:record error:&error];
 }
 
 - (BOOL)removeRecord:(TFRecord *)record error:(NSError **)error {
-	return (BOOL)ABAddressBookRemoveRecord(_addressbook, record.nativeObject, (__bridge CFErrorRef *)error);
+	CFErrorRef err = (__bridge CFErrorRef)*error;
+	return (BOOL)ABAddressBookRemoveRecord(_addressbook, record.nativeObject, &err);
 }
 
 - (BOOL)save {
@@ -52,7 +58,8 @@
 }
 
 - (BOOL)saveAndReturnError:(NSError **)error {
-	return (BOOL)ABAddressBookSave(_addressbook, (__bridge CFErrorRef *)error);
+	CFErrorRef err = (__bridge CFErrorRef)*error;
+	return (BOOL)ABAddressBookSave(_addressbook, &err);
 }
 
 - (BOOL)hasUnsavedChanges {
@@ -67,8 +74,12 @@
 	return [[TFPerson alloc] initWithRef:person];
 }
 
-- (TFRecordType)recordClassFromUniqueId:(TFRecordID)uniqueId 
-	return ABRecordGetRecordID([self recordForUniqueId:uniqueId]);
+- (TFRecordType)recordClassFromUniqueId:(TFRecordID)uniqueId {
+	if (ABRecordGetRecordType([self recordForUniqueId:uniqueId].nativeObject) == kABPersonType) {
+		return kTFPersonType;
+	} else {
+		return kTFGroupType;
+	}
 }
 
 

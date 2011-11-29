@@ -1,6 +1,10 @@
 #import "TFRecord.h"
+#import "TFAddressbook.h"
+#import "TFMultiValue.h"
 
 @implementation TFRecord
+
+@synthesize _record;
 
 - (id)initWithRef:(ABRecordRef)record {
 	if (self = [super init]) {
@@ -14,8 +18,9 @@
 	return [self initWithAddressBook:[TFAddressbook sharedAddressbook]];
 }
 
-- (id)initWithAddressBook:(TFAddressBook *)addressBook {
-	[self doesNotRecognize:_cmd];
+- (id)initWithAddressBook:(TFAddressbook *)addressBook {
+	[self doesNotRecognizeSelector:_cmd];
+	return nil;
 }
 
 - (void)dealloc {
@@ -31,25 +36,26 @@
 	return NO;
 }
 
-- (BOOL)removeValueForProperty:(NSString *)property {
+- (BOOL)removeValueForProperty:(TFPropertyID)property {
 	CFErrorRef error;
-	return (BOOL)ABRecordRemoveValue(_record, property, error);
+	return (BOOL)ABRecordRemoveValue(_record, property, &error);
 }
 
-- (BOOL)setValue:(id)value forProperty:(NSString *)property {
+- (BOOL)setValue:(id)value forProperty:(TFPropertyID)property {
 	NSError *error;
 	return [self setValue:value forProperty:property error:&error];
 }
 
-- (BOOL)setValue:(id)value forProperty:(NSString *)property error:(NSError **)error {
+- (BOOL)setValue:(id)value forProperty:(TFPropertyID)property error:(NSError **)error {
 	if ([value isKindOfClass:[TFMultiValue class]]) {
-		value = (id)((TFMultiValue *)value).nativeObject;
+		value = (__bridge id)((TFMultiValue *)value).nativeObject;
 	}
 
-	return (BOOL)ABRecordSetValue(_addressbook, property, (__bridge CFTypeRef)value, (__bridge CFErrorRef *)error);
+	CFErrorRef err = (__bridge CFErrorRef)*error;
+	return (BOOL)ABRecordSetValue(_record, property, (__bridge CFTypeRef)value, &err);
 }
 
-- (id)valueForProperty:(NSString *)property {
+- (id)valueForProperty:(TFPropertyID)property {
 	CFTypeRef value = ABRecordCopyValue(_record, property);
 	if (value == NULL) {
 		return nil;

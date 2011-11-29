@@ -2,15 +2,14 @@
 
 @class TFSearchElement, TFRecord;
 
-@interface TFAddressBook : NSObject {
+@interface TFAddressbook : NSObject {
 	ABAddressBookRef _addressbook;
-	id<TFABAddressbookDelegate> *_delegate;
 }
+
+@property (readonly, getter=nativeObject) ABAddressBookRef _addressbook;
 
 + (TFAddressbook *)sharedAddressbook;
 + (TFAddressbook *)addressbook;
-
-@property (weak) id<TFAddressBookDelegate> delegate;
 
 - (BOOL)addRecord:(TFRecord *)record;
 - (BOOL)addRecord:(TFRecord *)record error:(NSError **)error;

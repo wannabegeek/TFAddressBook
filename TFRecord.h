@@ -1,19 +1,24 @@
 
 #import "TFConstants.h"
 
-@interface TFRecord {
+@class TFAddressbook;
+
+@interface TFRecord : NSObject {
 	ABRecordRef _record;
 }
 
+@property (readonly, getter=nativeObject) ABRecordRef _record;
+
 - (id)initWithRef:(ABRecordRef)record;
 
-- (id)initWithAddressBook:(TFAddressBook *)addressBook;
+- (id)initWithAddressBook:(TFAddressbook *)addressBook;
 - (TFRecordID)uniqueId;
 - (BOOL)isReadOnly;
-- (BOOL)removeValueForProperty:(NSString *)property;
-- (BOOL)setValue:(id)value forProperty:(NSString *)property;
-- (BOOL)setValue:(id)value forProperty:(NSString *)property error:(NSError **)error;
-- (id)valueForProperty:(NSString *)property;
+- (BOOL)removeValueForProperty:(TFPropertyID)property;
+- (BOOL)setValue:(id)value forProperty:(TFPropertyID)property;
+- (BOOL)setValue:(id)value forProperty:(TFPropertyID)property error:(NSError **)error;
+- (id)valueForProperty:(TFPropertyID)property;
 
 - (NSString *)compositeName;
 
+@end
