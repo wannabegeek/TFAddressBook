@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'TFAddressbook' target in the 'TFAddressbook' project
+//
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+#endif
+
+#import "../TFConstants.h"

@@ -1,5 +1,4 @@
 
-#import "TFConstants.h"
 
 @class TFAddressbook;
 
@@ -11,7 +10,7 @@
 
 - (id)initWithRef:(ABRecordRef)record;
 
-- (id)initWithAddressBook:(TFAddressbook *)addressBook;
+- (id)initWithAddressbook:(TFAddressbook *)addressBook;
 - (TFRecordID)uniqueId;
 - (BOOL)isReadOnly;
 - (BOOL)removeValueForProperty:(TFPropertyID)property;

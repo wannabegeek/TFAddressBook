@@ -7,7 +7,10 @@
 //
 
 #import "TFRecord.h"
+#import "TFSearchElement.h"
 
 @interface TFGroup : TFRecord
+
++ (TFSearchElement *)searchElementForProperty:(TFPropertyID)property label:(NSString *)label key:(NSString *)key value:(id)value comparison:(TFSearchComparison)comparison;
 
 @end

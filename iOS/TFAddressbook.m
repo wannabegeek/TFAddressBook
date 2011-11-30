@@ -112,10 +112,20 @@
 
 - (NSString *)defaultCountryCode {
 #warning Not implemented yet
+	return nil;
 }
 
+//- (NSArray *)filterArray:(NSArray *)array withPredicate:
+
 - (NSArray *)recordsMatchingSearchElement:(TFSearchElement *)search {
-#warning Not implemented yet
+	//return [[self people] filteredArrayUsingPredicate:search.searchPredicate];
+	NSArray *people = [self people];
+	
+	NSIndexSet *indexSet = [people indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+		return [search matchesRecord:obj];
+	}];
+	
+	return [people objectsAtIndexes:indexSet];
 }
 
 @end

@@ -15,10 +15,12 @@
 }
 
 - (id)init {
-	return [self initWithAddressBook:[TFAddressbook sharedAddressbook]];
+	if ((self = [super init])) {
+	}
+	return self;
 }
 
-- (id)initWithAddressBook:(TFAddressbook *)addressBook {
+- (id)initWithAddressbook:(TFAddressbook *)addressBook {
 	[self doesNotRecognizeSelector:_cmd];
 	return nil;
 }
@@ -56,15 +58,8 @@
 }
 
 - (id)valueForProperty:(TFPropertyID)property {
-	CFTypeRef value = ABRecordCopyValue(_record, property);
-	if (value == NULL) {
-		return nil;
-	}
-	id result = nil;
-
-	// check the property type & convert as appropriate
-
-	return result;
+	[self doesNotRecognizeSelector:_cmd];
+	return nil;
 }
 
 - (NSString *)compositeName {
