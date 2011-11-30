@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/tom/github/TFAddressbook/TFAddressbookTests/TFAddressbookTests.m \
+  /Users/tom/github/TFAddressbook/TFAddressbookTests/TFAddressbookTests.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestingKit.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestDefines.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTest.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestCase.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestCase_Macros.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestingUtilities.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/NSException_SenTestFailure.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestSuite.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestObserver.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestLog.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestDistributedNotifier.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestRun.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestSuiteRun.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestCaseRun.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenInterfaceTestCase.h \
+  /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestProbe.h \
+  /Users/tom/github/TFAddressbook/TFABAddressbook.h \
+  /Users/tom/github/TFAddressbook/Mac/../Mac/TFAddressbook.h \
+  /Users/tom/github/TFAddressbook/Mac/../Mac/TFGroup.h \
+  /Users/tom/github/TFAddressbook/Mac/../Mac/TFMultiValue.h \
+  /Users/tom/github/TFAddressbook/Mac/../Mac/TFPerson.h \
+  /Users/tom/github/TFAddressbook/Mac/../Mac/TFRecord.h \
+  /Users/tom/github/TFAddressbook/Mac/../Mac/TFSearchElement.h

@@ -51,7 +51,7 @@
 }
 
 - (id)valueAtIndex:(NSUInteger)index {
-#warning Don;t thim MultiValie's can contain MultiValues
+#warning Don't think MultiValue's can contain MultiValues
 	CFTypeRef result = ABMultiValueCopyLabelAtIndex(_multiValue, index);
 	if ([self propertyType] & kABMultiValueMask) {
 		return [[TFMultiValue alloc] initWithRef:result];

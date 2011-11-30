@@ -14,28 +14,20 @@
 		E273582C1486201400BCE1BB /* libTFAddressbook_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E27358141486201400BCE1BB /* libTFAddressbook_iOS.a */; };
 		E27358321486201400BCE1BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E27358301486201400BCE1BB /* InfoPlist.strings */; };
 		E27358351486201400BCE1BB /* TFAddressbookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358341486201400BCE1BB /* TFAddressbookTests.m */; };
-		E273584F148620AB00BCE1BB /* TFAddressbook.h in Headers */ = {isa = PBXBuildFile; fileRef = E2735843148620AB00BCE1BB /* TFAddressbook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2735850148620AB00BCE1BB /* TFAddressbook.m in Sources */ = {isa = PBXBuildFile; fileRef = E2735844148620AB00BCE1BB /* TFAddressbook.m */; };
 		E2735851148620AB00BCE1BB /* TFAddressbook.m in Sources */ = {isa = PBXBuildFile; fileRef = E2735844148620AB00BCE1BB /* TFAddressbook.m */; };
-		E2735852148620AB00BCE1BB /* TFGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = E2735845148620AB00BCE1BB /* TFGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2735853148620AB00BCE1BB /* TFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E2735846148620AB00BCE1BB /* TFGroup.m */; };
 		E2735854148620AB00BCE1BB /* TFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E2735846148620AB00BCE1BB /* TFGroup.m */; };
-		E2735855148620AB00BCE1BB /* TFMultiValue.h in Headers */ = {isa = PBXBuildFile; fileRef = E2735847148620AB00BCE1BB /* TFMultiValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2735856148620AB00BCE1BB /* TFMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E2735848148620AB00BCE1BB /* TFMultiValue.m */; };
 		E2735857148620AB00BCE1BB /* TFMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E2735848148620AB00BCE1BB /* TFMultiValue.m */; };
-		E2735858148620AB00BCE1BB /* TFPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = E2735849148620AB00BCE1BB /* TFPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2735859148620AB00BCE1BB /* TFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E273584A148620AB00BCE1BB /* TFPerson.m */; };
 		E273585A148620AB00BCE1BB /* TFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E273584A148620AB00BCE1BB /* TFPerson.m */; };
-		E273585B148620AB00BCE1BB /* TFRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = E273584B148620AB00BCE1BB /* TFRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E273585C148620AB00BCE1BB /* TFRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E273584C148620AB00BCE1BB /* TFRecord.m */; };
 		E273585D148620AB00BCE1BB /* TFRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E273584C148620AB00BCE1BB /* TFRecord.m */; };
-		E273585E148620AB00BCE1BB /* TFSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E273584D148620AB00BCE1BB /* TFSearchElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E273585F148620AB00BCE1BB /* TFSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E273584E148620AB00BCE1BB /* TFSearchElement.m */; };
 		E2735860148620AB00BCE1BB /* TFSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E273584E148620AB00BCE1BB /* TFSearchElement.m */; };
 		E2735862148622C100BCE1BB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2735861148622C100BCE1BB /* AddressBook.framework */; };
 		E2735863148622FC00BCE1BB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2735861148622C100BCE1BB /* AddressBook.framework */; };
-		E27358651486584F00BCE1BB /* TFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358641486584F00BCE1BB /* TFConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E27358681486787A00BCE1BB /* TFBasicSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358661486787900BCE1BB /* TFBasicSearchElement.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E27358691486787A00BCE1BB /* TFBasicSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358671486787A00BCE1BB /* TFBasicSearchElement.m */; };
 		E273586A1486787A00BCE1BB /* TFBasicSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358671486787A00BCE1BB /* TFBasicSearchElement.m */; };
 		E2735871148690EF00BCE1BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2735870148690EF00BCE1BB /* Cocoa.framework */; };
@@ -43,27 +35,37 @@
 		E2735883148690EF00BCE1BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2735870148690EF00BCE1BB /* Cocoa.framework */; };
 		E2735886148690EF00BCE1BB /* TFAddressbook_Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E273586F148690EF00BCE1BB /* TFAddressbook_Mac.dylib */; };
 		E2735899148698F100BCE1BB /* TFAddressbookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358341486201400BCE1BB /* TFAddressbookTests.m */; };
-		E273589C1486996500BCE1BB /* TFAddressbook.h in Headers */ = {isa = PBXBuildFile; fileRef = E273589A1486996500BCE1BB /* TFAddressbook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E273589C1486996500BCE1BB /* TFAddressbook.h in Headers */ = {isa = PBXBuildFile; fileRef = E273589A1486996500BCE1BB /* TFAddressbook.h */; settings = {ATTRIBUTES = (); }; };
 		E273589D1486996500BCE1BB /* TFAddressbook.m in Sources */ = {isa = PBXBuildFile; fileRef = E273589B1486996500BCE1BB /* TFAddressbook.m */; };
 		E273589E1486996500BCE1BB /* TFAddressbook.m in Sources */ = {isa = PBXBuildFile; fileRef = E273589B1486996500BCE1BB /* TFAddressbook.m */; };
 		E27358A01486998500BCE1BB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E273589F1486998400BCE1BB /* AddressBook.framework */; };
 		E27358A11486999200BCE1BB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E273589F1486998400BCE1BB /* AddressBook.framework */; };
-		E27358A414869B7E00BCE1BB /* TFGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358A214869B7D00BCE1BB /* TFGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27358A414869B7E00BCE1BB /* TFGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358A214869B7D00BCE1BB /* TFGroup.h */; settings = {ATTRIBUTES = (); }; };
 		E27358A514869B7E00BCE1BB /* TFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358A314869B7E00BCE1BB /* TFGroup.m */; };
 		E27358A614869B7E00BCE1BB /* TFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358A314869B7E00BCE1BB /* TFGroup.m */; };
-		E27358A914869B9500BCE1BB /* TFMultiValue.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358A714869B9400BCE1BB /* TFMultiValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27358A914869B9500BCE1BB /* TFMultiValue.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358A714869B9400BCE1BB /* TFMultiValue.h */; settings = {ATTRIBUTES = (); }; };
 		E27358AA14869B9500BCE1BB /* TFMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358A814869B9400BCE1BB /* TFMultiValue.m */; };
 		E27358AB14869B9500BCE1BB /* TFMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358A814869B9400BCE1BB /* TFMultiValue.m */; };
-		E27358AE14869BE400BCE1BB /* TFPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358AC14869BE300BCE1BB /* TFPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27358AE14869BE400BCE1BB /* TFPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358AC14869BE300BCE1BB /* TFPerson.h */; settings = {ATTRIBUTES = (); }; };
 		E27358AF14869BE400BCE1BB /* TFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358AD14869BE300BCE1BB /* TFPerson.m */; };
 		E27358B014869BE400BCE1BB /* TFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358AD14869BE300BCE1BB /* TFPerson.m */; };
-		E27358B314869BF800BCE1BB /* TFRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358B114869BF800BCE1BB /* TFRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27358B314869BF800BCE1BB /* TFRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358B114869BF800BCE1BB /* TFRecord.h */; settings = {ATTRIBUTES = (); }; };
 		E27358B414869BF800BCE1BB /* TFRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358B214869BF800BCE1BB /* TFRecord.m */; };
 		E27358B514869BF800BCE1BB /* TFRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358B214869BF800BCE1BB /* TFRecord.m */; };
-		E27358B814869C5B00BCE1BB /* TFSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358B614869C5A00BCE1BB /* TFSearchElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27358B814869C5B00BCE1BB /* TFSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358B614869C5A00BCE1BB /* TFSearchElement.h */; settings = {ATTRIBUTES = (); }; };
 		E27358B914869C5B00BCE1BB /* TFSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358B714869C5A00BCE1BB /* TFSearchElement.m */; };
 		E27358BA14869C5B00BCE1BB /* TFSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358B714869C5A00BCE1BB /* TFSearchElement.m */; };
-		E27358BB1486BCB000BCE1BB /* TFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358641486584F00BCE1BB /* TFConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27358BB1486BCB000BCE1BB /* TFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358641486584F00BCE1BB /* TFConstants.h */; settings = {ATTRIBUTES = (); }; };
+		E27358C01486C6B200BCE1BB /* TFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358641486584F00BCE1BB /* TFConstants.h */; settings = {ATTRIBUTES = (); }; };
+		E27358C11486E29400BCE1BB /* TFBasicSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358661486787900BCE1BB /* TFBasicSearchElement.h */; };
+		E27358C21486E29600BCE1BB /* TFSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E273584D148620AB00BCE1BB /* TFSearchElement.h */; };
+		E27358C31486E29900BCE1BB /* TFRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = E273584B148620AB00BCE1BB /* TFRecord.h */; };
+		E27358C41486E29B00BCE1BB /* TFPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = E2735849148620AB00BCE1BB /* TFPerson.h */; };
+		E27358C51486E29D00BCE1BB /* TFMultiValue.h in Headers */ = {isa = PBXBuildFile; fileRef = E2735847148620AB00BCE1BB /* TFMultiValue.h */; };
+		E27358C61486E29F00BCE1BB /* TFGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = E2735845148620AB00BCE1BB /* TFGroup.h */; };
+		E27358C71486E2A200BCE1BB /* TFAddressbook.h in Headers */ = {isa = PBXBuildFile; fileRef = E2735843148620AB00BCE1BB /* TFAddressbook.h */; };
+		E27358C91486E3B000BCE1BB /* TFABAddressbook.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358C81486E3B000BCE1BB /* TFABAddressbook.h */; };
+		E27358CA1486E3B000BCE1BB /* TFABAddressbook.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358C81486E3B000BCE1BB /* TFABAddressbook.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,7 @@
 		E27358B214869BF800BCE1BB /* TFRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFRecord.m; path = Mac/TFRecord.m; sourceTree = SOURCE_ROOT; };
 		E27358B614869C5A00BCE1BB /* TFSearchElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFSearchElement.h; path = Mac/TFSearchElement.h; sourceTree = SOURCE_ROOT; };
 		E27358B714869C5A00BCE1BB /* TFSearchElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFSearchElement.m; path = Mac/TFSearchElement.m; sourceTree = SOURCE_ROOT; };
+		E27358C81486E3B000BCE1BB /* TFABAddressbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFABAddressbook.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				E27358641486584F00BCE1BB /* TFConstants.h */,
+				E27358C81486E3B000BCE1BB /* TFABAddressbook.h */,
 				E2735842148620AB00BCE1BB /* iOS */,
 				E27358961486918700BCE1BB /* Mac */,
 				E273581A1486201400BCE1BB /* Supporting Files */,
@@ -308,14 +312,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E273584F148620AB00BCE1BB /* TFAddressbook.h in Headers */,
-				E2735852148620AB00BCE1BB /* TFGroup.h in Headers */,
-				E2735855148620AB00BCE1BB /* TFMultiValue.h in Headers */,
-				E2735858148620AB00BCE1BB /* TFPerson.h in Headers */,
-				E273585B148620AB00BCE1BB /* TFRecord.h in Headers */,
-				E273585E148620AB00BCE1BB /* TFSearchElement.h in Headers */,
-				E27358651486584F00BCE1BB /* TFConstants.h in Headers */,
-				E27358681486787A00BCE1BB /* TFBasicSearchElement.h in Headers */,
+				E27358C01486C6B200BCE1BB /* TFConstants.h in Headers */,
+				E27358C11486E29400BCE1BB /* TFBasicSearchElement.h in Headers */,
+				E27358C21486E29600BCE1BB /* TFSearchElement.h in Headers */,
+				E27358C31486E29900BCE1BB /* TFRecord.h in Headers */,
+				E27358C41486E29B00BCE1BB /* TFPerson.h in Headers */,
+				E27358C51486E29D00BCE1BB /* TFMultiValue.h in Headers */,
+				E27358C61486E29F00BCE1BB /* TFGroup.h in Headers */,
+				E27358C71486E2A200BCE1BB /* TFAddressbook.h in Headers */,
+				E27358C91486E3B000BCE1BB /* TFABAddressbook.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +335,7 @@
 				E27358AE14869BE400BCE1BB /* TFPerson.h in Headers */,
 				E27358B314869BF800BCE1BB /* TFRecord.h in Headers */,
 				E27358B814869C5B00BCE1BB /* TFSearchElement.h in Headers */,
+				E27358CA1486E3B000BCE1BB /* TFABAddressbook.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
