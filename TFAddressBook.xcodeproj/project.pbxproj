@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E23A734F1487B52B001AE253 /* TFGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = E23A734E1487B52B001AE253 /* TFGlobals.h */; };
+		E23A736F1487B566001AE253 /* TFGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = E23A736E1487B566001AE253 /* TFGlobals.h */; };
+		E23A73721487B7FD001AE253 /* TFMutableMultiValue.h in Headers */ = {isa = PBXBuildFile; fileRef = E23A73701487B7FD001AE253 /* TFMutableMultiValue.h */; };
+		E23A73731487B7FD001AE253 /* TFMutableMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E23A73711487B7FD001AE253 /* TFMutableMultiValue.m */; };
+		E23A73761487BAEC001AE253 /* TFMutableMultiValue.h in Headers */ = {isa = PBXBuildFile; fileRef = E23A73741487BAEC001AE253 /* TFMutableMultiValue.h */; };
+		E23A73771487BAEC001AE253 /* TFMutableMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E23A73751487BAEC001AE253 /* TFMutableMultiValue.m */; };
+		E23A73781487BB02001AE253 /* TFMutableMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E23A73711487B7FD001AE253 /* TFMutableMultiValue.m */; };
+		E23A73791487BB0A001AE253 /* TFMutableMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E23A73751487BAEC001AE253 /* TFMutableMultiValue.m */; };
 		E27358181486201400BCE1BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27358171486201400BCE1BB /* Foundation.framework */; };
 		E27358261486201400BCE1BB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27358251486201400BCE1BB /* SenTestingKit.framework */; };
 		E27358281486201400BCE1BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27358271486201400BCE1BB /* UIKit.framework */; };
@@ -55,8 +63,6 @@
 		E27358B814869C5B00BCE1BB /* TFSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358B614869C5A00BCE1BB /* TFSearchElement.h */; settings = {ATTRIBUTES = (); }; };
 		E27358B914869C5B00BCE1BB /* TFSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358B714869C5A00BCE1BB /* TFSearchElement.m */; };
 		E27358BA14869C5B00BCE1BB /* TFSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E27358B714869C5A00BCE1BB /* TFSearchElement.m */; };
-		E27358BB1486BCB000BCE1BB /* TFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358641486584F00BCE1BB /* TFConstants.h */; settings = {ATTRIBUTES = (); }; };
-		E27358C01486C6B200BCE1BB /* TFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358641486584F00BCE1BB /* TFConstants.h */; settings = {ATTRIBUTES = (); }; };
 		E27358C11486E29400BCE1BB /* TFBasicSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E27358661486787900BCE1BB /* TFBasicSearchElement.h */; };
 		E27358C21486E29600BCE1BB /* TFSearchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E273584D148620AB00BCE1BB /* TFSearchElement.h */; };
 		E27358C31486E29900BCE1BB /* TFRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = E273584B148620AB00BCE1BB /* TFRecord.h */; };
@@ -86,6 +92,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E23A734E1487B52B001AE253 /* TFGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFGlobals.h; sourceTree = "<group>"; };
+		E23A736E1487B566001AE253 /* TFGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFGlobals.h; path = Mac/TFGlobals.h; sourceTree = SOURCE_ROOT; };
+		E23A73701487B7FD001AE253 /* TFMutableMultiValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFMutableMultiValue.h; sourceTree = "<group>"; };
+		E23A73711487B7FD001AE253 /* TFMutableMultiValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFMutableMultiValue.m; sourceTree = "<group>"; };
+		E23A73741487BAEC001AE253 /* TFMutableMultiValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFMutableMultiValue.h; path = Mac/TFMutableMultiValue.h; sourceTree = SOURCE_ROOT; };
+		E23A73751487BAEC001AE253 /* TFMutableMultiValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFMutableMultiValue.m; path = Mac/TFMutableMultiValue.m; sourceTree = SOURCE_ROOT; };
 		E27358141486201400BCE1BB /* libTFAddressBook_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTFAddressBook_iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27358171486201400BCE1BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E273581B1486201400BCE1BB /* TFAddressBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TFAddressBook-Prefix.pch"; path = "iOS/TFAddressBook-Prefix.pch"; sourceTree = "<group>"; };
@@ -109,7 +121,6 @@
 		E273584D148620AB00BCE1BB /* TFSearchElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSearchElement.h; sourceTree = "<group>"; };
 		E273584E148620AB00BCE1BB /* TFSearchElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSearchElement.m; sourceTree = "<group>"; };
 		E2735861148622C100BCE1BB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		E27358641486584F00BCE1BB /* TFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFConstants.h; sourceTree = "<group>"; };
 		E27358661486787900BCE1BB /* TFBasicSearchElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFBasicSearchElement.h; sourceTree = "<group>"; };
 		E27358671486787A00BCE1BB /* TFBasicSearchElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFBasicSearchElement.m; sourceTree = "<group>"; };
 		E273586F148690EF00BCE1BB /* TFAddressBook_Mac.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = TFAddressBook_Mac.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,7 +229,6 @@
 		E27358191486201400BCE1BB /* TFAddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				E27358641486584F00BCE1BB /* TFConstants.h */,
 				E27358C81486E3B000BCE1BB /* TFABAddressbook.h */,
 				E2735842148620AB00BCE1BB /* iOS */,
 				E27358961486918700BCE1BB /* Mac */,
@@ -258,12 +268,15 @@
 		E2735842148620AB00BCE1BB /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E23A734E1487B52B001AE253 /* TFGlobals.h */,
 				E2735843148620AB00BCE1BB /* TFAddressBook.h */,
 				E2735844148620AB00BCE1BB /* TFAddressBook.m */,
 				E2735845148620AB00BCE1BB /* TFGroup.h */,
 				E2735846148620AB00BCE1BB /* TFGroup.m */,
 				E2735847148620AB00BCE1BB /* TFMultiValue.h */,
 				E2735848148620AB00BCE1BB /* TFMultiValue.m */,
+				E23A73701487B7FD001AE253 /* TFMutableMultiValue.h */,
+				E23A73711487B7FD001AE253 /* TFMutableMultiValue.m */,
 				E2735849148620AB00BCE1BB /* TFPerson.h */,
 				E273584A148620AB00BCE1BB /* TFPerson.m */,
 				E273584B148620AB00BCE1BB /* TFRecord.h */,
@@ -289,6 +302,7 @@
 		E27358961486918700BCE1BB /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				E23A736E1487B566001AE253 /* TFGlobals.h */,
 				E273589A1486996500BCE1BB /* TFAddressBook.h */,
 				E273589B1486996500BCE1BB /* TFAddressBook.m */,
 				E27358A214869B7D00BCE1BB /* TFGroup.h */,
@@ -301,6 +315,8 @@
 				E27358B214869BF800BCE1BB /* TFRecord.m */,
 				E27358B614869C5A00BCE1BB /* TFSearchElement.h */,
 				E27358B714869C5A00BCE1BB /* TFSearchElement.m */,
+				E23A73741487BAEC001AE253 /* TFMutableMultiValue.h */,
+				E23A73751487BAEC001AE253 /* TFMutableMultiValue.m */,
 			);
 			name = Mac;
 			sourceTree = "<group>";
@@ -312,7 +328,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E27358C01486C6B200BCE1BB /* TFConstants.h in Headers */,
 				E27358C11486E29400BCE1BB /* TFBasicSearchElement.h in Headers */,
 				E27358C21486E29600BCE1BB /* TFSearchElement.h in Headers */,
 				E27358C31486E29900BCE1BB /* TFRecord.h in Headers */,
@@ -321,6 +336,8 @@
 				E27358C61486E29F00BCE1BB /* TFGroup.h in Headers */,
 				E27358C71486E2A200BCE1BB /* TFAddressBook.h in Headers */,
 				E27358C91486E3B000BCE1BB /* TFABAddressbook.h in Headers */,
+				E23A734F1487B52B001AE253 /* TFGlobals.h in Headers */,
+				E23A73721487B7FD001AE253 /* TFMutableMultiValue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +345,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E27358BB1486BCB000BCE1BB /* TFConstants.h in Headers */,
 				E273589C1486996500BCE1BB /* TFAddressBook.h in Headers */,
 				E27358A414869B7E00BCE1BB /* TFGroup.h in Headers */,
 				E27358A914869B9500BCE1BB /* TFMultiValue.h in Headers */,
@@ -336,6 +352,8 @@
 				E27358B314869BF800BCE1BB /* TFRecord.h in Headers */,
 				E27358B814869C5B00BCE1BB /* TFSearchElement.h in Headers */,
 				E27358CA1486E3B000BCE1BB /* TFABAddressbook.h in Headers */,
+				E23A736F1487B566001AE253 /* TFGlobals.h in Headers */,
+				E23A73761487BAEC001AE253 /* TFMutableMultiValue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +519,7 @@
 				E273585C148620AB00BCE1BB /* TFRecord.m in Sources */,
 				E273585F148620AB00BCE1BB /* TFSearchElement.m in Sources */,
 				E27358691486787A00BCE1BB /* TFBasicSearchElement.m in Sources */,
+				E23A73731487B7FD001AE253 /* TFMutableMultiValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +535,7 @@
 				E273585D148620AB00BCE1BB /* TFRecord.m in Sources */,
 				E2735860148620AB00BCE1BB /* TFSearchElement.m in Sources */,
 				E273586A1486787A00BCE1BB /* TFBasicSearchElement.m in Sources */,
+				E23A73781487BB02001AE253 /* TFMutableMultiValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +549,7 @@
 				E27358AF14869BE400BCE1BB /* TFPerson.m in Sources */,
 				E27358B414869BF800BCE1BB /* TFRecord.m in Sources */,
 				E27358B914869C5B00BCE1BB /* TFSearchElement.m in Sources */,
+				E23A73771487BAEC001AE253 /* TFMutableMultiValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +564,7 @@
 				E27358B014869BE400BCE1BB /* TFPerson.m in Sources */,
 				E27358B514869BF800BCE1BB /* TFRecord.m in Sources */,
 				E27358BA14869C5B00BCE1BB /* TFSearchElement.m in Sources */,
+				E23A73791487BB0A001AE253 /* TFMutableMultiValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

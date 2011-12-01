@@ -65,4 +65,9 @@
 	return [self valueAtIndex:index];
 }
 
+- (NSString *)primaryIdentifier {
+//	error primaryIdentifer isn't supported on iOS
+	return nil;
+}
+
 @end
