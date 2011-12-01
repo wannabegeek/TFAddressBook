@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TFGlobals.h"
 
 typedef enum {
 	kTFSearchElementTypeBasic,

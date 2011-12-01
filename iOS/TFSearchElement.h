@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TFBasicSearchElement.h"
+#import "TFGlobals.h"
 
 @interface TFSearchElement : TFBasicSearchElement {
 	NSArray *_subpredicates;

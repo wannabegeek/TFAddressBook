@@ -117,9 +117,13 @@
 - (void)testMultiValue {
 	TFPerson *person = [[TFPerson alloc] initWithAddressBook:[TFAddressBook sharedAddressBook]];
 	[person setValue:@"Test" forProperty:kTFFirstNameProperty];
-	[person setValue:@"XXXXXXXXXXXXXXXXX" forProperty:kTFLastNameProperty];
+	[person setValue:@"User 2" forProperty:kTFLastNameProperty];
 
-	TFMultiValue *multiValue = [[TFMultiValue alloc] init];
+//	TFMultiValue *multiValue = [[TFMultiValue alloc] init];
+
+	
+	[[TFAddressBook sharedAddressBook] removeRecord:person];
+	STAssertTrue([[TFAddressBook sharedAddressBook] save], @"For some reason saving the addressbook failed");
 }
 
 @end

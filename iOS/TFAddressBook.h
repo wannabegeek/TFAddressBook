@@ -1,3 +1,4 @@
+#import "TFGlobals.h"
 
 @class TFSearchElement, TFRecord;
 

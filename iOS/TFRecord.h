@@ -1,4 +1,4 @@
-
+#import "TFGlobals.h"
 
 @class TFAddressBook;
 

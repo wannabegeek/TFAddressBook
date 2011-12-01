@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AddressBook/ABMultiValue.h>
 #import <AddressBook/ABPerson.h>
+#import "TFGlobals.h"
 
 @interface TFMultiValue : NSObject {
 	ABMultiValueRef _multiValue;

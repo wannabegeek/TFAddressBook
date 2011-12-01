@@ -10,6 +10,7 @@
 #import "TFRecord.h"
 #import "TFMultiValue.h"
 
+
 NSString *kTFSearchBindingPropertyKey = @"PROPERTY";
 NSString *kTFSearchBindingLabelKey = @"LABEL";
 NSString *kTFSearchBindingKeyKey = @"KEY";
