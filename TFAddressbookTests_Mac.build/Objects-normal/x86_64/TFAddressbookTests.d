@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/tom/github/TFAddressbook/TFAddressbookTests/TFAddressbookTests.m \
-  /Users/tom/github/TFAddressbook/TFAddressbookTests/TFAddressbookTests.h \
+  /Users/tom/github/TFAddressbook/TFAddressBookTests/TFAddressBookTests.m \
+  /Users/tom/github/TFAddressbook/TFAddressBookTests/TFAddressBookTests.h \
   /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestingKit.h \
   /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestDefines.h \
   /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTest.h \
@@ -18,9 +18,9 @@ dependencies: \
   /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenInterfaceTestCase.h \
   /Developer/Library/Frameworks/SenTestingKit.framework/Headers/SenTestProbe.h \
   /Users/tom/github/TFAddressbook/TFABAddressbook.h \
-  /Users/tom/github/TFAddressbook/Mac/../Mac/TFAddressbook.h \
-  /Users/tom/github/TFAddressbook/Mac/../Mac/TFGroup.h \
-  /Users/tom/github/TFAddressbook/Mac/../Mac/TFMultiValue.h \
-  /Users/tom/github/TFAddressbook/Mac/../Mac/TFPerson.h \
-  /Users/tom/github/TFAddressbook/Mac/../Mac/TFRecord.h \
-  /Users/tom/github/TFAddressbook/Mac/../Mac/TFSearchElement.h
+  /Users/tom/github/TFAddressbook/Mac/TFAddressbook.h \
+  /Users/tom/github/TFAddressbook/Mac/TFGroup.h \
+  /Users/tom/github/TFAddressbook/Mac/TFMultiValue.h \
+  /Users/tom/github/TFAddressbook/Mac/TFPerson.h \
+  /Users/tom/github/TFAddressbook/Mac/TFRecord.h \
+  /Users/tom/github/TFAddressbook/Mac/TFSearchElement.h

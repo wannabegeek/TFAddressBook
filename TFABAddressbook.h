@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "TFConstants.h"
 
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+	#import "iOS/TFGlobals.h"
 	#import "iOS/TFAddressbook.h"
 	#import "iOS/TFGroup.h"
 	#import "iOS/TFMultiValue.h"
@@ -16,6 +16,7 @@
 	#import "iOS/TFRecord.h"
 	#import "iOS/TFSearchElement.h"
 #else
+	#import "Mac/TFGlobals.h"
 	#import "Mac/TFAddressbook.h"
 	#import "Mac/TFGroup.h"
 	#import "Mac/TFMultiValue.h"

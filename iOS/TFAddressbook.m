@@ -1,22 +1,22 @@
-#import "TFAddressbook.h"
+#import "TFAddressBook.h"
 #import "TFPerson.h"
 #import "TFGroup.h"
 
-@implementation TFAddressbook
+@implementation TFAddressBook
 
 @synthesize _addressbook;
 
-+ (TFAddressbook *)sharedAddressbook {
++ (TFAddressBook *)sharedAddressBook {
 	static dispatch_once_t onceToken = 0;
-	__strong static TFAddressbook *_addressbook = nil;
+	__strong static TFAddressBook *_addressbook = nil;
 	dispatch_once(&onceToken, ^{
-		_addressbook = [TFAddressbook addressbook];
+		_addressbook = [TFAddressBook addressBook];
 	});
 	return _addressbook;
 }
 
-+ (TFAddressbook *)addressbook {
-	return [[TFAddressbook alloc] init];
++ (TFAddressBook *)addressBook {
+	return [[TFAddressBook alloc] init];
 }
 
 - (id)init {

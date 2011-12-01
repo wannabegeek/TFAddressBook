@@ -7,7 +7,7 @@
 //
 
 #import "TFGroup.h"
-#import "TFAddressbook.h"
+#import "TFAddressBook.h"
 
 @implementation TFGroup
 
@@ -20,10 +20,10 @@
 }
 
 - (id)init {
-	return [self initWithAddressbook:[TFAddressbook sharedAddressbook]];
+	return [self initWithAddressBook:[TFAddressBook sharedAddressBook]];
 }
 
-- (id)initWithAddressbook:(TFAddressbook *)addressbook {
+- (id)initWithAddressBook:(TFAddressBook *)addressbook {
 	if ((self = [super init])) {
 		ABRecordRef group = ABGroupCreate();
 		CFErrorRef error;

@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E273586E148690EF00BCE1BB"
-               BuildableName = "TFAddressbook_Mac.dylib"
-               BlueprintName = "TFAddressbook_Mac"
+               BuildableName = "TFAddressBook_Mac.dylib"
+               BlueprintName = "TFAddressBook_Mac"
                ReferencedContainer = "container:TFAddressbook.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E2735880148690EF00BCE1BB"
-               BuildableName = "TFAddressbookTests_Mac.octest"
-               BlueprintName = "TFAddressbookTests_Mac"
+               BuildableName = "TFAddressBookTests_Mac.octest"
+               BlueprintName = "TFAddressBookTests_Mac"
                ReferencedContainer = "container:TFAddressbook.xcodeproj">
             </BuildableReference>
          </TestableReference>

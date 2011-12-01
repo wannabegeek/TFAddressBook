@@ -8,6 +8,6 @@
 
 #import "TFAddressbook.h"
 
-@implementation TFAddressbook
+@implementation TFAddressBook
 
 @end

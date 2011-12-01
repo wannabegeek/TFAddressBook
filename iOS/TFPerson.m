@@ -7,7 +7,7 @@
 //
 
 #import "TFPerson.h"
-#import "TFAddressbook.h"
+#import "TFAddressBook.h"
 #import "TFMultiValue.h"
 
 @implementation TFPerson
@@ -21,10 +21,10 @@
 }
 
 - (id)init {
-	return [self initWithAddressbook:[TFAddressbook sharedAddressbook]];
+	return [self initWithAddressBook:[TFAddressBook sharedAddressBook]];
 }
 
-- (id)initWithAddressbook:(TFAddressbook *)addressbook {
+- (id)initWithAddressBook:(TFAddressBook *)addressbook {
 	if (self = [super init]) {
 		ABRecordRef person = ABPersonCreate();
 		CFErrorRef error;

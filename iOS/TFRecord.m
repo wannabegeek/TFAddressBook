@@ -1,5 +1,5 @@
 #import "TFRecord.h"
-#import "TFAddressbook.h"
+#import "TFAddressBook.h"
 #import "TFMultiValue.h"
 
 @implementation TFRecord
@@ -20,7 +20,7 @@
 	return self;
 }
 
-- (id)initWithAddressbook:(TFAddressbook *)addressBook {
+- (id)initWithAddressBook:(TFAddressBook *)addressbook {
 	[self doesNotRecognizeSelector:_cmd];
 	return nil;
 }

@@ -8,6 +8,6 @@
 
 #import <AddressBook/AddressBook.h>
 
-@interface TFAddressbook : ABAddressBook
+@interface TFAddressBook : ABAddressBook
 
 @end

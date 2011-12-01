@@ -1,6 +1,6 @@
 
 
-@class TFAddressbook;
+@class TFAddressBook;
 
 @interface TFRecord : NSObject {
 	ABRecordRef _record;
@@ -10,7 +10,7 @@
 
 - (id)initWithRef:(ABRecordRef)record;
 
-- (id)initWithAddressbook:(TFAddressbook *)addressBook;
+- (id)initWithAddressBook:(TFAddressBook *)addressbook;
 - (TFRecordID)uniqueId;
 - (BOOL)isReadOnly;
 - (BOOL)removeValueForProperty:(TFPropertyID)property;

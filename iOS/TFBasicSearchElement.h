@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+	kTFSearchElementTypeBasic,
+	kTFSearchElementTypeCompound
+} TFSearchElementType;
+
 @class TFRecord;
 @class TFSearchElement;
 
