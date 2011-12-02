@@ -105,10 +105,18 @@ NSString *kTFSearchBindingComparisonKey = @"COMPARISON";
 			} else {
 				switch (comparison) {
 					case kTFEqual:
-						return [result isEqual:value];
+						if (result != nil) {
+							return [result isEqual:value];
+						} else if (value == nil) {
+							return YES;
+						}
 						break;
 					case kTFNotEqual:
-						return ![result isEqual:value];
+						if (result != nil) {
+							return ![result isEqual:value];
+						} else if (value == nil) {
+							return NO;
+						}
 						break;
 					case kTFLessThan:
 						return [result isEqual:value];
@@ -124,22 +132,30 @@ NSString *kTFSearchBindingComparisonKey = @"COMPARISON";
 						NSAssert(false, @"not implemented yet");
 						break;
 					case kTFEqualCaseInsensitive:
-						if (![result isKindOfClass:[NSString class]]) {
-							[NSException raise:@"TFSearchElementExcpetion" format:@"Property must be a string for search type"];
+						if (result != nil) {
+							if (![result isKindOfClass:[NSString class]]) {
+								[NSException raise:@"TFSearchElementExcpetion" format:@"Property must be a string for search type"];
+							}
+							return [(NSString *)result caseInsensitiveCompare:value] == NSOrderedSame;
+						} else if (value == nil) {
+							return YES;
 						}
-						return [(NSString *)result caseInsensitiveCompare:value] == NSOrderedSame;
 						break;
 					case kTFContainsSubString:
-						if (![result isKindOfClass:[NSString class]]) {
-							[NSException raise:@"TFSearchElementExcpetion" format:@"Property must be a string for search type"];
+						if (result != nil) {
+							if (![result isKindOfClass:[NSString class]]) {
+								[NSException raise:@"TFSearchElementExcpetion" format:@"Property must be a string for search type"];
+							}
+							return [(NSString *)result rangeOfString:value].location != NSNotFound;
 						}
-						return [(NSString *)result rangeOfString:value].location != NSNotFound;
 						break;
 					case kTFContainsSubStringCaseInsensitive:
-						if (![result isKindOfClass:[NSString class]]) {
-							[NSException raise:@"TFSearchElementExcpetion" format:@"Property must be a string for search type"];
+						if (result != nil) {
+							if (![result isKindOfClass:[NSString class]]) {
+								[NSException raise:@"TFSearchElementExcpetion" format:@"Property must be a string for search type"];
+							}
+							return [[(NSString *)result lowercaseString] rangeOfString:[value lowercaseString]].location != NSNotFound;
 						}
-						return [[(NSString *)result lowercaseString] rangeOfString:[value lowercaseString]].location != NSNotFound;
 						break;
 					default:
 						[NSException raise:@"TFSearchElementExcpetion" format:@"Unsupported comparison"];

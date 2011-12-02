@@ -17,10 +17,4 @@
 	#import "iOS/TFSearchElement.h"
 #else
 	#import "Mac/TFGlobals.h"
-	#import "Mac/TFAddressbook.h"
-	#import "Mac/TFGroup.h"
-	#import "Mac/TFMultiValue.h"
-	#import "Mac/TFPerson.h"
-	#import "Mac/TFRecord.h"
-	#import "Mac/TFSearchElement.h"
 #endif

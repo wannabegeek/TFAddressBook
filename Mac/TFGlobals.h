@@ -9,11 +9,16 @@
 #define TFPropertyType				ABPropertyType
 #define TFPropertyID				NSString *
 
-
-typedef enum {
-	kTFFirstNameFirst = kABFirstNameFirst,
-	kTFLastNameFirst  = kABLastNameFirst
-} TFDefaultNameOrdering;
+typedef NSUInteger TFDefaultNameOrdering;
+#define kTFShowAsMask                           kABShowAsMask
+#define kTFShowAsPerson                         kABShowAsPerson
+#define kTFShowAsCompany                        kABShowAsCompany
+#define kTFShowAsResource                       kABShowAsResource
+#define kTFShowAsRoom                           kABShowAsRoom
+#define kTFNameOrderingMask                     kABNameOrderingMask
+#define kTFDefaultNameOrdering                  kABDefaultNameOrdering
+#define kTFFirstNameFirst                       kABFirstNameFirst
+#define kTFLastNameFirst                        kABLastNameFirst
 
 typedef enum {
 	kTFPersonType = 0,
@@ -106,4 +111,16 @@ typedef enum {
 	kTFContainsSubString = kABContainsSubString,
 	kTFContainsSubStringCaseInsensitive = kABContainsSubStringCaseInsensitive
 } TFSearchComparison;
+
+#pragma mark -
+#pragma mark ABAddressBook mappings
+
+typedef ABAddressBook TFAddressBook;
+typedef ABRecord TFRecord;
+typedef ABPerson TFPerson;
+typedef ABGroup TFGroup;
+typedef ABMultiValue TFMultiValue;
+typedef ABMutableMultiValue TFMutableMultiValue;
+typedef ABSearchElement TFSearchElement;
+
 

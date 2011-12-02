@@ -10,10 +10,16 @@
 #define TFPropertyID					ABPropertyID
 
 
-typedef enum {
-	kTFFirstNameFirst = kABPersonSortByFirstName,
-	kTFLastNameFirst = kABPersonSortByLastName
-} TFDefaultNameOrdering;
+typedef NSUInteger TFDefaultNameOrdering;
+#define kTFShowAsMask                           000007
+#define kTFShowAsPerson                         000000
+#define kTFShowAsCompany                        000001
+#define kTFShowAsResource                       000002
+#define kTFShowAsRoom                           000003
+#define kTFNameOrderingMask                     000070
+#define kTFDefaultNameOrdering                  000000
+#define kTFFirstNameFirst                       000040
+#define kTFLastNameFirst                        000020
 
 typedef enum {
 	kTFPersonType = 0,
@@ -67,7 +73,7 @@ typedef enum {
 #define kTFOtherDateComponentsProperty			kABPropertyInvalidID			// Not Supported on iOS
 #define kTFRelatedNamesProperty				kABPersonRelatedNamesProperty
 #define kTFDepartmentProperty				kABPersonDepartmentProperty
-#define kTFPersonFlags
+#define kTFPersonFlags					99999999
 #define kTFPhoneProperty				kABPersonPhoneProperty
 #define kTFInstantMessageProperty			kABPersonInstantMessageProperty
 #define kTFAIMInstantProperty				kABPropertyInvalidID			// Not Supported on iOS

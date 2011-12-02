@@ -17,6 +17,9 @@
 }
 
 + (TFPropertyType)typeOfProperty:(TFPropertyID)property {
+	if (property == kTFPersonFlags) {
+		return kABIntegerPropertyType;
+	}
 	return ABPersonGetTypeOfProperty(property);
 }
 
@@ -45,41 +48,60 @@
 	if (propertyType == kABInvalidPropertyType) {
 		[NSException raise:@"TFSearchElementExcpetion" format:@"Invalid property for object"];
 	}
-	
-	CFTypeRef value = ABRecordCopyValue(_record, property);
-	if (value == NULL) {
-		return nil;
-	}
-	
+
 	id result = nil;
-	
-	// check the property type & convert as appropriate
-	if (propertyType & kABMultiValueMask) {
-		result = [[TFMultiValue alloc] initWithRef:value];
-	} else {
-		switch (propertyType) {
-			case kABStringPropertyType:
-				result = (__bridge NSString *)value;
-				break;
-			case kABIntegerPropertyType:
-				result = (__bridge NSNumber *)value;
-				break;
-			case kABRealPropertyType:
-				result = (__bridge NSNumber *)value;
-				break;
-			case kABDateTimePropertyType:
-				result = (__bridge NSDate *)value;
-				break;
-			case kABDictionaryPropertyType:
-				result = (__bridge NSDictionary *)value;
-				break;
-			default:
-				break;
+
+	if (property == kTFPersonFlags) {
+		NSUInteger flags;
+		if (ABPersonGetCompositeNameFormat() == kABPersonCompositeNameFormatFirstNameFirst) {
+			flags |= (kTFNameOrderingMask & kTFFirstNameFirst);
+		} else {
+			flags |= (kTFNameOrderingMask & kTFLastNameFirst);
 		}
-	}
-	
-	CFRelease(value);
-	
+		
+		CFNumberRef type = ABRecordCopyValue(_record, kABPersonKindProperty);
+		if (type == kABPersonKindPerson) {
+			flags |= (kTFShowAsMask & kTFShowAsPerson);
+		} else {
+			flags |= (kTFShowAsMask & kTFShowAsCompany);
+		}
+
+		CFRelease(type);
+		
+		return [NSNumber numberWithInteger:flags];
+		
+	} else {
+		CFTypeRef value = ABRecordCopyValue(_record, property);
+		if (value == NULL) {
+			result = nil;
+		} else {
+			// check the property type & convert as appropriate
+			if (propertyType & kABMultiValueMask) {
+				result = [[TFMultiValue alloc] initWithRef:value];
+			} else {
+				switch (propertyType) {
+					case kABStringPropertyType:
+						result = (__bridge NSString *)value;
+						break;
+					case kABIntegerPropertyType:
+						result = (__bridge NSNumber *)value;
+						break;
+					case kABRealPropertyType:
+						result = (__bridge NSNumber *)value;
+						break;
+					case kABDateTimePropertyType:
+						result = (__bridge NSDate *)value;
+						break;
+					case kABDictionaryPropertyType:
+						result = (__bridge NSDictionary *)value;
+						break;
+					default:
+						break;
+				}
+			}
+			CFRelease(value);
+		}
+	}	
 	return result;
 }
 
