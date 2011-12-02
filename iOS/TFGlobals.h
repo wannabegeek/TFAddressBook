@@ -112,3 +112,9 @@ typedef enum {
 	kTFContainsSubStringCaseInsensitive
 } TFSearchComparison;
 
+#define	kTFAddressStreetKey				(__bridge NSString *)kABPersonAddressStreetKey
+#define	kTFAddressCityKey				(__bridge NSString *)kABPersonAddressCityKey
+#define	kTFAddressStateKey				(__bridge NSString *)kABPersonAddressStateKey
+#define	kTFAddressZIPKey				(__bridge NSString *)kABPersonAddressZIPKey
+#define	kTFAddressCountryKey			(__bridge NSString *)kABPersonAddressCountryKey
+#define	kTFAddressCountryCodeKey		(__bridge NSString *)kABPersonAddressCountryCodeKey

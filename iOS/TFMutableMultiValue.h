@@ -10,11 +10,11 @@
 
 @interface TFMutableMultiValue : TFMultiValue
 
-- (NSString *)addValue:(id)value withLabel:(NSString *)label;
-- (NSString *)insertValue:(id)value withLabel:(NSString *)label atIndex:(NSUInteger)index;
+- (TFMultiValueIdentifier)addValue:(id)value withLabel:(NSString *)label;
+- (TFMultiValueIdentifier)insertValue:(id)value withLabel:(NSString *)label atIndex:(NSUInteger)index;
 - (BOOL)removeValueAndLabelAtIndex:(NSUInteger)index;
 - (BOOL)replaceLabelAtIndex:(NSUInteger)index withLabel:(NSString *)label;
 - (BOOL)replaceValueAtIndex:(NSUInteger)index withValue:(id)value;
-- (BOOL)setPrimaryIdentifier:(NSString *)identifier;
+- (BOOL)setPrimaryIdentifier:(TFMultiValueIdentifier)identifier;
 
 @end

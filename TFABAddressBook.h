@@ -12,6 +12,7 @@
 	#import "iOS/TFAddressbook.h"
 	#import "iOS/TFGroup.h"
 	#import "iOS/TFMultiValue.h"
+	#import "iOS/TFMutableMultiValue.h"
 	#import "iOS/TFPerson.h"
 	#import "iOS/TFRecord.h"
 	#import "iOS/TFSearchElement.h"

@@ -22,7 +22,9 @@
 }
 
 - (void)dealloc {
-	CFRelease(_multiValue);
+	if (_multiValue) {
+		CFRelease(_multiValue);
+	}
 }
 
 - (NSUInteger)count {

@@ -119,9 +119,21 @@
 	[person setValue:@"Test" forProperty:kTFFirstNameProperty];
 	[person setValue:@"User 2" forProperty:kTFLastNameProperty];
 
-//	TFMultiValue *multiValue = [[TFMultiValue alloc] init];
+	TFMutableMultiValue *multiValue = [[TFMutableMultiValue alloc] init];
 
+	NSUInteger index = 0;
+	for (index = 0; index < 4; index++) {
+		NSMutableDictionary *addressDictionary = [NSMutableDictionary dictionary];
+		[addressDictionary setValue:@"First Line" forKey:kTFAddressStreetKey];
+		[addressDictionary setValue:@"My City" forKey:kTFAddressCityKey];
+		[addressDictionary setValue:@"My Country" forKey:kTFAddressCountryKey];
+		[multiValue insertValue:addressDictionary withLabel:[NSString stringWithFormat:@"Home %d", index] atIndex:index];
+	}
 	
+	[person setValue:multiValue forProperty:kTFAddressProperty];
+
+	STAssertEquals((NSUInteger)[multiValue count], (NSUInteger)4, @"MultiValue should contain 4 keys, found %d", [multiValue count]);
+
 	[[TFAddressBook sharedAddressBook] removeRecord:person];
 	STAssertTrue([[TFAddressBook sharedAddressBook] save], @"For some reason saving the addressbook failed");
 }
