@@ -16,6 +16,7 @@
     [super setUp];
     
     // Set-up code here.
+	NSLog(@"Default Country code is: '%@'", [[TFAddressBook sharedAddressBook] defaultCountryCode]);
 }
 
 - (void)tearDown
@@ -76,6 +77,33 @@
 	STAssertEquals(firstNameInitialCount + 1, [results3 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results3 count]);
 	NSLog(@"%lu results found for firstName & lastName composite search", (unsigned long)[results3 count]);
 
+	
+	TFMutableMultiValue *multiValue = [[TFMutableMultiValue alloc] init];
+	
+	NSMutableDictionary *addressDictionary = [NSMutableDictionary dictionary];
+	[addressDictionary setValue:@"First Line" forKey:kTFAddressStreetKey];
+	[addressDictionary setValue:@"My City" forKey:kTFAddressCityKey];
+	[addressDictionary setValue:@"My Country" forKey:kTFAddressCountryKey];
+	[multiValue insertValue:addressDictionary withLabel:@"Home Somewhere" atIndex:0];
+
+	[person setValue:multiValue forProperty:kTFAddressProperty];
+
+	TFSearchElement *addressPositiveSearch = [TFPerson searchElementForProperty:kTFAddressProperty label:nil key:kTFAddressStreetKey value:@"First Line" comparison:kTFEqual];
+	NSArray *results4 = [[TFAddressBook sharedAddressBook] recordsMatchingSearchElement:[TFSearchElement searchElementForConjunction:kTFSearchAnd children:[NSArray arrayWithObjects:firstnameSearch, lastnameSearch, addressPositiveSearch, nil]]];
+	STAssertEquals(firstNameInitialCount + 1, [results4 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results4 count]);	
+
+	TFSearchElement *addressNegativeSearch = [TFPerson searchElementForProperty:kTFAddressProperty label:nil key:kTFAddressStreetKey value:@"NOT THERE" comparison:kTFNotEqual];
+	NSArray *results5 = [[TFAddressBook sharedAddressBook] recordsMatchingSearchElement:[TFSearchElement searchElementForConjunction:kTFSearchAnd children:[NSArray arrayWithObjects:firstnameSearch, lastnameSearch, addressNegativeSearch, nil]]];
+	STAssertEquals(firstNameInitialCount + 1, [results5 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results5 count]);	
+
+	addressPositiveSearch = [TFPerson searchElementForProperty:kTFAddressProperty label:@"Home Somewhere" key:kTFAddressStreetKey value:@"First Line" comparison:kTFEqual];
+	results4 = [[TFAddressBook sharedAddressBook] recordsMatchingSearchElement:[TFSearchElement searchElementForConjunction:kTFSearchAnd children:[NSArray arrayWithObjects:firstnameSearch, lastnameSearch, addressPositiveSearch, nil]]];
+	STAssertEquals(firstNameInitialCount + 1, [results4 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results4 count]);	
+	
+	addressNegativeSearch = [TFPerson searchElementForProperty:kTFAddressProperty label:@"Home Somewhere" key:kTFAddressStreetKey value:@"NOT THERE" comparison:kTFNotEqual];
+	results5 = [[TFAddressBook sharedAddressBook] recordsMatchingSearchElement:[TFSearchElement searchElementForConjunction:kTFSearchAnd children:[NSArray arrayWithObjects:firstnameSearch, lastnameSearch, addressNegativeSearch, nil]]];
+	STAssertEquals(firstNameInitialCount + 1, [results5 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results5 count]);	
+
 	[[TFAddressBook sharedAddressBook] removeRecord:person];
 	STAssertTrue([[TFAddressBook sharedAddressBook] save], @"For some reason saving the addressbook failed");
 }
@@ -110,8 +138,49 @@
 	STAssertEquals(firstNameInitialCount + 1, [results4 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", [results4 count]);
 	NSLog(@"%lu results found for firstName & lastName composite search", (unsigned long)[results4 count]);
 
+	TFMutableMultiValue *multiValue = [[TFMutableMultiValue alloc] init];
+	NSMutableDictionary *addressDictionary = [NSMutableDictionary dictionary];
+	[addressDictionary setValue:@"First Line" forKey:kTFAddressStreetKey];
+	[addressDictionary setValue:@"My City" forKey:kTFAddressCityKey];
+	[addressDictionary setValue:@"My Country" forKey:kTFAddressCountryKey];
+	[multiValue insertValue:addressDictionary withLabel:@"Home Somewhere" atIndex:0];
+	[person setValue:multiValue forProperty:kTFAddressProperty];
+	
+	TFSearchElement *addressPositiveSearch = [TFPerson searchElementForProperty:kTFAddressProperty label:nil key:kTFAddressStreetKey value:@"First Line" comparison:kTFEqual];
+	NSArray *results5 = [[TFAddressBook sharedAddressBook] recordsMatchingSearchElement:[TFSearchElement searchElementForConjunction:kTFSearchAnd children:[NSArray arrayWithObjects:firstnameSearch, lastnameSearch, addressPositiveSearch, nil]]];
+	STAssertEquals(firstNameInitialCount, [results5 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results5 count]);	
+	
+	TFSearchElement *addressNegativeSearch = [TFPerson searchElementForProperty:kTFAddressProperty label:nil key:kTFAddressStreetKey value:@"NOT THERE" comparison:kTFNotEqual];
+	results5 = [[TFAddressBook sharedAddressBook] recordsMatchingSearchElement:[TFSearchElement searchElementForConjunction:kTFSearchAnd children:[NSArray arrayWithObjects:firstnameSearch, lastnameSearch, addressNegativeSearch, nil]]];
+	STAssertEquals(firstNameInitialCount, [results5 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results5 count]);	
+	
+	addressPositiveSearch = [TFPerson searchElementForProperty:kTFAddressProperty label:@"Home Somewhere" key:kTFAddressStreetKey value:@"First Line" comparison:kTFNotEqual];
+	results5 = [[TFAddressBook sharedAddressBook] recordsMatchingSearchElement:[TFSearchElement searchElementForConjunction:kTFSearchAnd children:[NSArray arrayWithObjects:firstnameSearch, lastnameSearch, addressPositiveSearch, nil]]];
+	STAssertEquals(firstNameInitialCount, [results5 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results5 count]);	
+	
+	addressNegativeSearch = [TFPerson searchElementForProperty:kTFAddressProperty label:@"Home Somewhere" key:kTFAddressStreetKey value:@"NOT THERE" comparison:kTFEqual];
+	results5 = [[TFAddressBook sharedAddressBook] recordsMatchingSearchElement:[TFSearchElement searchElementForConjunction:kTFSearchAnd children:[NSArray arrayWithObjects:firstnameSearch, lastnameSearch, addressNegativeSearch, nil]]];
+	STAssertEquals(firstNameInitialCount, [results5 count], @"We added a new record that should match, we didn't find it ([before]%d + 1 != [after]%d)", firstNameInitialCount, [results5 count]);	
+
+	
 	[[TFAddressBook sharedAddressBook] removeRecord:person];
 	STAssertTrue([[TFAddressBook sharedAddressBook] save], @"For some reason saving the addressbook failed");
+}
+
+- (void)testPropertyTypes {
+	TFPerson *person = [[TFPerson alloc] initWithAddressBook:[TFAddressBook sharedAddressBook]];
+	[person setValue:@"Test" forProperty:kTFFirstNameProperty];
+	[person setValue:[NSDate date] forProperty:kTFBirthdayProperty];
+	TFMutableMultiValue *multiValue = [[TFMutableMultiValue alloc] init];
+	NSMutableDictionary *addressDictionary = [NSMutableDictionary dictionary];
+	[multiValue insertValue:addressDictionary withLabel:@"Test" atIndex:0];
+	[person setValue:multiValue forProperty:kTFAddressProperty];
+
+	STAssertTrue([[person valueForProperty:kTFFirstNameProperty] isKindOfClass:[NSString class]], @"Incorrect type returned expecting NSString");
+	STAssertTrue([[person valueForProperty:kTFBirthdayProperty] isKindOfClass:[NSDate class]], @"Incorrect type returned expecting NSDate");
+	STAssertTrue([[person valueForProperty:kTFAddressProperty] isKindOfClass:[TFMultiValue class]], @"Incorrect type returned expecting TFMultiValue");
+
+	[[TFAddressBook sharedAddressBook] removeRecord:person];
 }
 
 - (void)testMultiValue {
@@ -133,6 +202,16 @@
 	[person setValue:multiValue forProperty:kTFAddressProperty];
 
 	STAssertEquals((NSUInteger)[multiValue count], (NSUInteger)4, @"MultiValue should contain 4 keys, found %d", [multiValue count]);
+	
+	TFMultiValue *multiValue2 = [person valueForProperty:kTFAddressProperty];
+	STAssertTrue([multiValue2 isKindOfClass:[TFMultiValue class]], @"Incorrect type returned expecting TFMultiValue");
+
+	NSString *label = [multiValue2 labelAtIndex:0];
+	STAssertEqualObjects(label, @"Home 0", @"Unexpected label");
+	
+	NSDictionary *addressDictionary = [multiValue2 valueAtIndex:0];
+	STAssertEqualObjects([addressDictionary valueForKey:kTFAddressStreetKey], @"First Line", @"Unexpected dictionary entry");
+	
 
 	[[TFAddressBook sharedAddressBook] removeRecord:person];
 	STAssertTrue([[TFAddressBook sharedAddressBook] save], @"For some reason saving the addressbook failed");

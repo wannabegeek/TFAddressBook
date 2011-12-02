@@ -111,8 +111,7 @@
 }
 
 - (NSString *)defaultCountryCode {
-#warning Not implemented yet
-	return nil;
+	return [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
 }
 
 //- (NSArray *)filterArray:(NSArray *)array withPredicate:

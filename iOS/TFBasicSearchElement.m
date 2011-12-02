@@ -59,10 +59,26 @@ NSString *kTFSearchBindingComparisonKey = @"COMPARISON";
 			id result = [evaluatedObject valueForProperty:property];
 			if ([result isKindOfClass:[TFMultiValue class]]) {
 				TFMultiValue *mv = (TFMultiValue *)result;
-				for (NSUInteger i = 0; i<[result count]; i++) {
+				for (NSUInteger i = 0; i<[mv count]; i++) {
 					if (label && key) {
-#warning Not implemented yet
-						NSAssert(false, @"not implemented yet");
+						NSDictionary *dictionary = [mv valueAtIndex:i];
+						if ([[mv labelAtIndex:i] isEqualToString:label] && [dictionary isKindOfClass:[NSDictionary class]]  && [dictionary valueForKey:key] != nil) {
+							switch (comparison) {
+								case kTFEqual:
+									if ([[dictionary valueForKey:key] isEqual:value]) { 
+										return YES;
+									}
+									break;
+								case kTFNotEqual:
+									if (![[dictionary valueForKey:key] isEqual:value]) {
+										return YES;
+									}
+									break;
+									
+								default:
+									break;
+							}
+						}
 					} else if (label) {
 						if ([[mv labelAtIndex:i] isEqualToString:label]) {
 							switch (comparison) {
@@ -82,8 +98,24 @@ NSString *kTFSearchBindingComparisonKey = @"COMPARISON";
 							}
 						}
 					} else if (key) {
-#warning Not implemented yet
-						NSAssert(false, @"not implemented yet");
+						NSDictionary *dictionary = [mv valueAtIndex:i];
+						if ([dictionary isKindOfClass:[NSDictionary class]] && [dictionary valueForKey:key] != nil) {
+							switch (comparison) {
+								case kTFEqual:
+									if ([[dictionary valueForKey:key] isEqual:value]) { 
+										return YES;
+									}
+									break;
+								case kTFNotEqual:
+									if (![[dictionary valueForKey:key] isEqual:value]) {
+										return YES;
+									}
+									break;
+									
+								default:
+									break;
+							}
+						}
 					} else {
 						switch (comparison) {
 							case kTFEqual:
