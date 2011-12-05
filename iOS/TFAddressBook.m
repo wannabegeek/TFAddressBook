@@ -2,6 +2,15 @@
 #import "TFPerson.h"
 #import "TFGroup.h"
 
+@interface TFAddressBook (private)
+- (void)externalChangeNotification;
+@end
+
+static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRef info, void * context) {
+    TFAddressBook *obj = (__bridge TFAddressBook *)context;
+    [obj externalChangeNotification];
+}
+
 @implementation TFAddressBook
 
 @synthesize _addressbook;
@@ -11,6 +20,7 @@
 	__strong static TFAddressBook *_addressbook = nil;
 	dispatch_once(&onceToken, ^{
 		_addressbook = [TFAddressBook addressBook];
+		ABAddressBookRegisterExternalChangeCallback(_addressbook.nativeObject, _externalChangeNotification, (__bridge void *)_addressbook);
 	});
 	return _addressbook;
 }
@@ -29,6 +39,7 @@
 }
 
 - (void)dealloc {
+//	ABAddressBookUnregisterExternalChangeCallback(_addressbook, _externalChangeNotification, self);
 	CFRelease(_addressbook);
 }
 
@@ -40,10 +51,12 @@
 - (BOOL)addRecord:(TFRecord *)record error:(NSError **)error {
 	CFErrorRef err = (__bridge CFErrorRef)*error;
 	BOOL success = (BOOL)ABAddressBookAddRecord(_addressbook, record.nativeObject, &err);
+/*
 	if (success) {
-		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueID]], kTFInsertedRecords];
+		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueId]], kTFInsertedRecords, nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:self userInfo:changedDict];
 	}
+ */
 	return success;
 }
 
@@ -55,10 +68,12 @@
 - (BOOL)removeRecord:(TFRecord *)record error:(NSError **)error {
 	CFErrorRef err = (__bridge CFErrorRef)*error;
 	BOOL success = (BOOL)ABAddressBookRemoveRecord(_addressbook, record.nativeObject, &err);
+/*
 	if (success) {
-		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueID]], kTFDeletedRecords];
+		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueId]], kTFDeletedRecords, nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:self userInfo:changedDict];
 	}
+ */
 	return success;
 }
 
@@ -68,8 +83,12 @@
 }
 
 - (BOOL)saveAndReturnError:(NSError **)error {
-	CFErrorRef err = (__bridge CFErrorRef)*error;
-	return (BOOL)ABAddressBookSave(_addressbook, &err);
+	BOOL success = YES;
+	if ([self hasUnsavedChanges]) {
+		CFErrorRef err = (__bridge CFErrorRef)*error;
+		success = (BOOL)ABAddressBookSave(_addressbook, &err);
+	}
+	return success;
 }
 
 - (BOOL)hasUnsavedChanges {
@@ -135,6 +154,10 @@
 	}];
 	
 	return [people objectsAtIndexes:indexSet];
+}
+
+- (void)externalChangeNotification {
+	[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedExternallyNotification object:self userInfo:nil];
 }
 
 @end

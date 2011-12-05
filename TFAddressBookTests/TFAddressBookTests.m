@@ -217,4 +217,7 @@
 	STAssertTrue([[TFAddressBook sharedAddressBook] save], @"For some reason saving the addressbook failed");
 }
 
+- (void)testChangeNotifications {
+}
+
 @end

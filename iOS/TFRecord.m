@@ -45,7 +45,14 @@
 
 - (BOOL)removeValueForProperty:(TFPropertyID)property {
 	CFErrorRef error;
-	return (BOOL)ABRecordRemoveValue(_record, property, &error);
+	BOOL success = (BOOL)ABRecordRemoveValue(_record, property, &error);
+/*
+	if (success) {
+		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[self uniqueId]], kTFUpdatedRecords, nil];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:nil userInfo:changedDict];
+	}
+ */
+	return success;
 }
 
 - (BOOL)setValue:(id)value forProperty:(TFPropertyID)property {
@@ -59,7 +66,14 @@
 	}
 
 	CFErrorRef err = (__bridge CFErrorRef)*error;
-	return (BOOL)ABRecordSetValue(_record, property, (__bridge CFTypeRef)value, &err);
+	BOOL success = (BOOL)ABRecordSetValue(_record, property, (__bridge CFTypeRef)value, &err);
+/*
+	if (success) {
+		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[self uniqueId]], kTFUpdatedRecords, nil];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:nil userInfo:changedDict];
+	}
+ */
+	return success;
 }
 
 - (id)valueForProperty:(TFPropertyID)property {

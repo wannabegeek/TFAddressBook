@@ -128,3 +128,6 @@ typedef ABSearchElement TFSearchElement;
 #define kTFDatabaseChangedNotification			kABDatabaseChangedNotification
 #define kTFDatabaseChangedExternallyNotification	kABDatabaseChangedExternallyNotification
 
+#define kTFInsertedRecords				kABInsertedRecords
+#define kTFUpdatedRecords				kABUpdatedRecords
+#define kTFDeletedRecords				kABDeletedRecords
