@@ -3,7 +3,9 @@
 @class TFSearchElement, TFRecord;
 
 @interface TFAddressBook : NSObject {
+@private
 	ABAddressBookRef _addressbook;
+	NSMutableDictionary *_updatableObjects;
 }
 
 @property (readonly, getter=nativeObject) ABAddressBookRef _addressbook;

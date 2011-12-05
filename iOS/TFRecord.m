@@ -23,11 +23,13 @@
 	if ((self = [super init])) {
 		_addressbook = addressbook;
 	}
-	return nil;
+	return self;
 }
 
 - (void)dealloc {
-	CFRelease(_record);
+	if (_record) {
+		CFRelease(_record);
+	}
 }
 
 

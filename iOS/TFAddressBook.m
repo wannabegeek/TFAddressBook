@@ -3,12 +3,13 @@
 #import "TFGroup.h"
 
 @interface TFAddressBook (private)
-- (void)externalChangeNotification;
+- (void)_externalChangeNotification;
+- (void)_prepareForExternalNotifications;
 @end
 
 static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRef info, void * context) {
     TFAddressBook *obj = (__bridge TFAddressBook *)context;
-    [obj externalChangeNotification];
+    [obj _externalChangeNotification];
 }
 
 @implementation TFAddressBook
@@ -20,7 +21,7 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 	__strong static TFAddressBook *_addressbook = nil;
 	dispatch_once(&onceToken, ^{
 		_addressbook = [TFAddressBook addressBook];
-		ABAddressBookRegisterExternalChangeCallback(_addressbook.nativeObject, _externalChangeNotification, (__bridge void *)_addressbook);
+		[_addressbook _prepareForExternalNotifications];
 	});
 	return _addressbook;
 }
@@ -51,11 +52,12 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 - (BOOL)addRecord:(TFRecord *)record error:(NSError **)error {
 	CFErrorRef err = (__bridge CFErrorRef)*error;
 	BOOL success = (BOOL)ABAddressBookAddRecord(_addressbook, record.nativeObject, &err);
-
+/*
 	if (success && [record uniqueId] != nil) {
 		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueId]], kTFInsertedRecords, nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:self userInfo:changedDict];
 	}
+*/
 	return success;
 }
 
@@ -67,11 +69,13 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 - (BOOL)removeRecord:(TFRecord *)record error:(NSError **)error {
 	CFErrorRef err = (__bridge CFErrorRef)*error;
 	BOOL success = (BOOL)ABAddressBookRemoveRecord(_addressbook, record.nativeObject, &err);
+/*
 	if (success && [record uniqueId] != nil) {
 		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueId]], kTFDeletedRecords, nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:self userInfo:changedDict];
 	}
 
+*/
 	return success;
 }
 
@@ -98,7 +102,7 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 	if(person == NULL) {
 		return nil;
 	}
-	return [[TFPerson alloc] initWithRef:person];
+	return [[TFPerson alloc] initWithRef:person addressbook:self];
 }
 
 - (TFRecordType)recordClassFromUniqueId:(TFRecordID)uniqueId {
@@ -115,7 +119,7 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 	NSArray *allPeople = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllPeople(_addressbook);
 	for (NSUInteger i=0; i<[allPeople count]; i++) {
 		ABRecordRef person = (__bridge ABRecordRef)[allPeople objectAtIndex:i];
-		[people addObject:[[TFPerson alloc] initWithRef:person]];
+		[people addObject:[[TFPerson alloc] initWithRef:person addressbook:self]];
 	}
 	return people;
 }
@@ -125,7 +129,7 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 	NSArray *allGroups = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllGroups(_addressbook);
 	for (NSUInteger i=0; i<[allGroups count]; i++) {
 		ABRecordRef group = (__bridge ABRecordRef)[allGroups objectAtIndex:i];
-		[groups addObject:[[TFGroup alloc] initWithRef:group]];
+		[groups addObject:[[TFGroup alloc] initWithRef:group addressbook:self]];
 	}
 	return groups;
 }
@@ -141,10 +145,7 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 	return [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
 }
 
-//- (NSArray *)filterArray:(NSArray *)array withPredicate:
-
 - (NSArray *)recordsMatchingSearchElement:(TFSearchElement *)search {
-	//return [[self people] filteredArrayUsingPredicate:search.searchPredicate];
 	NSArray *people = [self people];
 	
 	NSIndexSet *indexSet = [people indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
@@ -154,11 +155,49 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 	return [people objectsAtIndexes:indexSet];
 }
 
-- (void)externalChangeNotification {
-	// find all new records
-	// find all updated records
-	// find all deleted records
-	[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedExternallyNotification object:self userInfo:nil];
+- (void)_prepareForExternalNotifications {
+	_updatableObjects = [NSMutableDictionary dictionary];
+	NSArray *allPeople = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllPeople(_addressbook);
+	for (NSUInteger i=0; i<[allPeople count]; i++) {
+		ABRecordRef person = (__bridge ABRecordRef)[allPeople objectAtIndex:i];
+		ABRecordID recordId = ABRecordGetRecordID(person);
+		NSDate *lastModified = (__bridge_transfer NSDate *)ABRecordCopyValue(person, kABPersonModificationDateProperty);
+		[_updatableObjects setObject:lastModified forKey:[NSString stringWithFormat:@"%d", recordId]];
+	}
+	
+	ABAddressBookRegisterExternalChangeCallback(_addressbook, _externalChangeNotification, (__bridge void *)self);
+}
+
+- (void)_externalChangeNotification {
+	TFAddressBook *tempAb = [TFAddressBook addressBook];
+	NSArray *allPeople = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllPeople(tempAb.nativeObject);
+
+	NSMutableSet *inserted = [NSMutableSet set];
+	NSMutableSet *updated = [NSMutableSet set];
+	NSMutableSet *deleted = [NSMutableSet setWithArray:[_updatableObjects allKeys]];
+	
+	for (NSUInteger i=0; i<[allPeople count]; i++) {
+		ABRecordRef person = (__bridge ABRecordRef)[allPeople objectAtIndex:i];
+		NSString *recordId = [NSString stringWithFormat:@"%d", ABRecordGetRecordID(person)];
+		NSDate *lastModified = (__bridge_transfer NSDate *)ABRecordCopyValue(person, kABPersonModificationDateProperty);
+		
+		NSDate *lastKnownUpdate = [_updatableObjects objectForKey:recordId];
+		if (lastKnownUpdate == nil) {
+			[_updatableObjects setObject:lastModified forKey:recordId];
+			[inserted addObject:recordId];
+		} else if (![lastKnownUpdate isEqualToDate:lastModified]) {
+			[_updatableObjects setObject:lastModified forKey:recordId];
+			[updated addObject:recordId];
+		}
+		
+		// We still have it, not been removed
+		[deleted removeObject:recordId];
+	}
+	
+	if ([inserted count] != 0 || [updated count] != 0 || [deleted count] != 0) {
+		NSDictionary *changed = [NSDictionary dictionaryWithObjectsAndKeys:inserted, kTFInsertedRecords, updated, kTFUpdatedRecords, deleted, kTFDeletedRecords, nil
+		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedExternallyNotification object:self userInfo:changed];
+	}
 }
 
 @end

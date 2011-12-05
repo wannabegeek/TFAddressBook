@@ -24,7 +24,7 @@
 }
 
 - (id)initWithAddressBook:(TFAddressBook *)addressbook {
-	if (self = [super initWithAddressBook:addressbook]) {
+	if ((self = [super initWithAddressBook:addressbook])) {
 		ABRecordRef person = ABPersonCreate();
 		_record = person;
 
