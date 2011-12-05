@@ -3,7 +3,7 @@
 #pragma mark -
 #pragma mark Platform dependent object types
 
-#define TFRecordID					ABRecordID
+#define TFRecordID					NSString * //ABRecordID
 #define AddressbookRecord				ABRecordRef
 #define TFMultiValueIdentifier				ABMultiValueIdentifier
 #define TFPropertyType					ABPropertyType
@@ -118,3 +118,12 @@ typedef enum {
 #define	kTFAddressZIPKey				(__bridge NSString *)kABPersonAddressZIPKey
 #define	kTFAddressCountryKey			(__bridge NSString *)kABPersonAddressCountryKey
 #define	kTFAddressCountryCodeKey		(__bridge NSString *)kABPersonAddressCountryCodeKey
+
+#pragma mark -
+#pragma mark Notificvation keys
+#define kTFDatabaseChangedNotification			@"kABDatabaseChangedNotification"
+#define kTFDatabaseChangedExternallyNotification	@"kABDatabaseChangedExternallyNotification"
+
+#define kTFInsertedRecords				@"kABInsertedRecords"
+#define kTFUpdatedRecords				@"kABUpdatedRecords"
+#define kTFDeletedRecords				@"kABDeletedRecords"

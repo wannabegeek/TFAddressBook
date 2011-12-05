@@ -39,7 +39,12 @@
 
 - (BOOL)addRecord:(TFRecord *)record error:(NSError **)error {
 	CFErrorRef err = (__bridge CFErrorRef)*error;
-	return (BOOL)ABAddressBookAddRecord(_addressbook, record.nativeObject, &err);
+	BOOL success = (BOOL)ABAddressBookAddRecord(_addressbook, record.nativeObject, &err);
+	if (success) {
+		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueID]], kTFInsertedRecords];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:self userInfo:changedDict];
+	}
+	return success;
 }
 
 - (BOOL)removeRecord:(TFRecord *)record {
@@ -49,7 +54,12 @@
 
 - (BOOL)removeRecord:(TFRecord *)record error:(NSError **)error {
 	CFErrorRef err = (__bridge CFErrorRef)*error;
-	return (BOOL)ABAddressBookRemoveRecord(_addressbook, record.nativeObject, &err);
+	BOOL success = (BOOL)ABAddressBookRemoveRecord(_addressbook, record.nativeObject, &err);
+	if (success) {
+		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueID]], kTFDeletedRecords];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:self userInfo:changedDict];
+	}
+	return success;
 }
 
 - (BOOL)save {
@@ -67,7 +77,7 @@
 }
 
 - (TFRecord *)recordForUniqueId:(TFRecordID)uniqueId {
-	ABRecordRef person = ABAddressBookGetPersonWithRecordID(_addressbook, uniqueId);
+	ABRecordRef person = ABAddressBookGetPersonWithRecordID(_addressbook, [uniqueId integerValue]);
 	if(person == NULL) {
 		return nil;
 	}

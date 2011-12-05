@@ -31,7 +31,12 @@
 
 
 - (TFRecordID)uniqueId {
-	return ABRecordGetRecordID(_record);
+	ABRecordID recordId = ABRecordGetRecordID(_record);
+	if (recordId == kABRecordInvalidID) {
+		return nil;
+	} else {
+		return [NSString stringWithFormat:@"%d", recordId];
+	}
 }
 
 - (BOOL)isReadOnly {

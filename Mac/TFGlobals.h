@@ -123,4 +123,8 @@ typedef ABMultiValue TFMultiValue;
 typedef ABMutableMultiValue TFMutableMultiValue;
 typedef ABSearchElement TFSearchElement;
 
+#pragma mark -
+#pragma mark Notificvation keys
+#define kTFDatabaseChangedNotification			kABDatabaseChangedNotification
+#define kTFDatabaseChangedExternallyNotification	kABDatabaseChangedExternallyNotification
 
