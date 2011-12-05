@@ -51,12 +51,11 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 - (BOOL)addRecord:(TFRecord *)record error:(NSError **)error {
 	CFErrorRef err = (__bridge CFErrorRef)*error;
 	BOOL success = (BOOL)ABAddressBookAddRecord(_addressbook, record.nativeObject, &err);
-/*
-	if (success) {
+
+	if (success && [record uniqueId] != nil) {
 		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueId]], kTFInsertedRecords, nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:self userInfo:changedDict];
 	}
- */
 	return success;
 }
 
@@ -68,12 +67,11 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 - (BOOL)removeRecord:(TFRecord *)record error:(NSError **)error {
 	CFErrorRef err = (__bridge CFErrorRef)*error;
 	BOOL success = (BOOL)ABAddressBookRemoveRecord(_addressbook, record.nativeObject, &err);
-/*
-	if (success) {
+	if (success && [record uniqueId] != nil) {
 		NSDictionary *changedDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:[record uniqueId]], kTFDeletedRecords, nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedNotification object:self userInfo:changedDict];
 	}
- */
+
 	return success;
 }
 
@@ -157,6 +155,9 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 }
 
 - (void)externalChangeNotification {
+	// find all new records
+	// find all updated records
+	// find all deleted records
 	[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedExternallyNotification object:self userInfo:nil];
 }
 

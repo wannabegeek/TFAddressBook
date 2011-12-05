@@ -6,22 +6,23 @@
 
 @synthesize _record;
 
-- (id)initWithRef:(ABRecordRef)record {
+- (id)initWithRef:(ABRecordRef)record addressbook:(TFAddressBook *)addressbook {
 	if (self = [super init]) {
 		_record = record;
 		CFRetain(_record);
+		_addressbook = addressbook;
 	}
 	return self;
 }
 
 - (id)init {
-	if ((self = [super init])) {
-	}
-	return self;
+	return [self initWithAddressBook:[TFAddressBook sharedAddressBook]];
 }
 
 - (id)initWithAddressBook:(TFAddressBook *)addressbook {
-	[self doesNotRecognizeSelector:_cmd];
+	if ((self = [super init])) {
+		_addressbook = addressbook;
+	}
 	return nil;
 }
 
@@ -83,6 +84,10 @@
 
 - (NSString *)compositeName {
 	return (__bridge_transfer NSString *)ABRecordCopyCompositeName(_record);
+}
+
+- (BOOL)isEqual:(id)obj {
+	return (obj == self || ([obj isKindOfClass:[self class]] && _record == ((TFRecord *)obj).nativeObject));
 }
 
 @end

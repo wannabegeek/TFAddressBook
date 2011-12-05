@@ -23,18 +23,14 @@
 	return ABPersonGetTypeOfProperty(property);
 }
 
-- (id)init {
-	return [self initWithAddressBook:[TFAddressBook sharedAddressBook]];
-}
-
 - (id)initWithAddressBook:(TFAddressBook *)addressbook {
-	if (self = [super init]) {
+	if (self = [super initWithAddressBook:addressbook]) {
 		ABRecordRef person = ABPersonCreate();
-		CFErrorRef error;
-		BOOL success = ABAddressBookAddRecord(addressbook.nativeObject, person, &error);
-		if (success) {
-			_record = person;
-		} else {
+		_record = person;
+
+		NSError *error;
+		BOOL success = [addressbook addRecord:self error:&error];
+		if (!success) {
 			CFRelease(person);
 			return nil;
 		}

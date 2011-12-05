@@ -19,18 +19,14 @@
 	return kABStringPropertyType;
 }
 
-- (id)init {
-	return [self initWithAddressBook:[TFAddressBook sharedAddressBook]];
-}
-
 - (id)initWithAddressBook:(TFAddressBook *)addressbook {
-	if ((self = [super init])) {
+	if ((self = [super initWithAddressBook:addressbook])) {
 		ABRecordRef group = ABGroupCreate();
-		CFErrorRef error;
-		BOOL success = ABAddressBookAddRecord(addressbook.nativeObject, group, &error);
-		if (success) {
-			_record = group;
-		} else {
+		_record = group;
+
+		NSError *error;
+		BOOL success = [addressbook addRecord:self error:&error];
+		if (!success) {
 			CFRelease(group);
 			return nil;
 		}
