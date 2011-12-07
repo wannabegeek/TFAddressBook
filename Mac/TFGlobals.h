@@ -123,6 +123,15 @@ typedef ABMultiValue TFMultiValue;
 typedef ABMutableMultiValue TFMutableMultiValue;
 typedef ABSearchElement TFSearchElement;
 
+
+#define	kTFAddressStreetKey				kABAddressStreetKey
+#define	kTFAddressCityKey				kABAddressCityKey
+#define	kTFAddressStateKey				kABAddressStateKey
+#define	kTFAddressZIPKey				kABAddressZIPKey
+#define	kTFAddressCountryKey			kABAddressCountryKey
+#define	kTFAddressCountryCodeKey		kABAddressCountryCodeKey
+
+
 #pragma mark -
 #pragma mark Notificvation keys
 #define kTFDatabaseChangedNotification			kABDatabaseChangedNotification

@@ -84,10 +84,6 @@
 	return nil;
 }
 
-- (NSString *)compositeName {
-	return (__bridge_transfer NSString *)ABRecordCopyCompositeName(_record);
-}
-
 - (BOOL)isEqual:(id)obj {
 	return (obj == self || ([obj isKindOfClass:[self class]] && _record == ((TFRecord *)obj).nativeObject));
 }

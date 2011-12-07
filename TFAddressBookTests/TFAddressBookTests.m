@@ -16,6 +16,7 @@
     [super setUp];
     
     // Set-up code here.
+	[[TFAddressBook sharedAddressBook] save];
 	NSLog(@"Default Country code is: '%@'", [[TFAddressBook sharedAddressBook] defaultCountryCode]);
 }
 
@@ -218,6 +219,24 @@
 }
 
 - (void)testChangeNotifications {
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedCallback:) name:kTFDatabaseChangedNotification object:nil];
+	
+	TFPerson *person = [[TFPerson alloc] initWithAddressBook:[TFAddressBook sharedAddressBook]];
+	[person setValue:@"Test" forProperty:kTFFirstNameProperty];
+	[person setValue:@"User 2" forProperty:kTFLastNameProperty];
+	
+	[[NSRunLoop currentRunLoop] runUntilDate:[[NSDate date] dateByAddingTimeInterval:0.5]];
+	
+	[[TFAddressBook sharedAddressBook] removeRecord:person];
+	
+	[[NSRunLoop currentRunLoop] runUntilDate:[[NSDate date] dateByAddingTimeInterval:0.5]];
+	
+	[[TFAddressBook sharedAddressBook] save];
+	
+	[[NSRunLoop currentRunLoop] runUntilDate:[[NSDate date] dateByAddingTimeInterval:0.5]];
 }
 
+- (void)changedCallback:(NSNotification *)notification {
+	_callbackCount++;
+}
 @end

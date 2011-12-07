@@ -8,6 +8,8 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface TFAddressBookTests : SenTestCase
+@interface TFAddressBookTests : SenTestCase {
+	NSUInteger _callbackCount;
+}
 
 @end

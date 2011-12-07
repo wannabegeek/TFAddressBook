@@ -195,7 +195,7 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 	}
 	
 	if ([inserted count] != 0 || [updated count] != 0 || [deleted count] != 0) {
-		NSDictionary *changed = [NSDictionary dictionaryWithObjectsAndKeys:inserted, kTFInsertedRecords, updated, kTFUpdatedRecords, deleted, kTFDeletedRecords, nil
+		NSDictionary *changed = [NSDictionary dictionaryWithObjectsAndKeys:inserted, kTFInsertedRecords, updated, kTFUpdatedRecords, deleted, kTFDeletedRecords, nil];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kTFDatabaseChangedExternallyNotification object:self userInfo:changed];
 	}
 }

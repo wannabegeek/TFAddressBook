@@ -19,6 +19,4 @@
 - (BOOL)setValue:(id)value forProperty:(TFPropertyID)property error:(NSError **)error;
 - (id)valueForProperty:(TFPropertyID)property;
 
-- (NSString *)compositeName;
-
 @end
