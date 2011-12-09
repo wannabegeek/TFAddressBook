@@ -2,6 +2,10 @@
 #import "TFPerson.h"
 #import "TFGroup.h"
 
+NSString *TFLocalizedPropertyOrLabel(NSString *propertyOrLabel) {
+	return (__bridge_transfer NSString *)ABAddressBookCopyLocalizedLabel((__bridge CFStringRef)propertyOrLabel);
+}
+
 @interface TFAddressBook (private)
 - (void)_externalChangeNotification;
 - (void)_prepareForExternalNotifications;

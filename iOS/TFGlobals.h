@@ -127,3 +127,5 @@ typedef enum {
 #define kTFInsertedRecords				@"kABInsertedRecords"
 #define kTFUpdatedRecords				@"kABUpdatedRecords"
 #define kTFDeletedRecords				@"kABDeletedRecords"
+
+NSString *TFLocalizedPropertyOrLabel(NSString *propertyOrLabel);
