@@ -11,7 +11,7 @@ NSString *TFLocalizedPropertyOrLabel(NSString *propertyOrLabel) {
 - (void)_prepareForExternalNotifications;
 @end
 
-static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRef info, void * context) {
+static void externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRef info, void * context) {
     TFAddressBook *obj = (__bridge TFAddressBook *)context;
     [obj _externalChangeNotification];
 }
@@ -169,7 +169,7 @@ static void _externalChangeNotification(ABAddressBookRef bookRef, CFDictionaryRe
 		[_updatableObjects setObject:lastModified forKey:[NSString stringWithFormat:@"%d", recordId]];
 	}
 	
-	ABAddressBookRegisterExternalChangeCallback(_addressbook, _externalChangeNotification, (__bridge void *)self);
+	ABAddressBookRegisterExternalChangeCallback(_addressbook, externalChangeNotification, (__bridge void *)self);
 }
 
 - (void)_externalChangeNotification {
