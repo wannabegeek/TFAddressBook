@@ -3,9 +3,9 @@
 #pragma mark -
 #pragma mark Platform dependent object types
 
-#define TFRecordID				NSString *
+#define TFRecordID					NSString *
 #define AddressbookRecord			ABRecord *
-#define TFMultiValueIdentifier			NSString *
+#define TFMultiValueIdentifier		NSString *
 #define TFPropertyType				ABPropertyType
 #define TFPropertyID				NSString *
 
@@ -23,7 +23,7 @@ typedef NSUInteger TFDefaultNameOrdering;
 typedef enum {
 	kTFPersonType = 0,
 	kTFGroupType  = 1,
-	kTFSourceType  = 2
+	kTFSourceType = 2
 } TFRecordType;
 
 #pragma mark -
@@ -141,6 +141,4 @@ typedef ABSearchElement TFSearchElement;
 #define kTFUpdatedRecords				kABUpdatedRecords
 #define kTFDeletedRecords				kABDeletedRecords
 
-NSString *TFLocalizedPropertyOrLabel(NSString *propertyOrLabel) {
-	return ABLocalizedPropertyOrLabel(NSString *propertyOrLabel);
-}
+#define TFLocalizedPropertyOrLabel(propertyOrLabel) ABLocalizedPropertyOrLabel(propertyOrLabel)
