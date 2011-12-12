@@ -1,6 +1,10 @@
-
 TFAddressbook.xcodeproj/xcuserdata/tom.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
 
 TFAddressbook.xcodeproj/project.xcworkspace/xcuserdata/tom.xcuserdatad/UserInterfaceState.xcuserstate
 
 .DS_Store
+build/
+TFAddressBook_iOS.build/
+TFAddressBook_Mac.build/
+TFAddressBookTests_iOS.build/
+TFAddressBookTests_Mac.build/
