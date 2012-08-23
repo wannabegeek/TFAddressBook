@@ -19,41 +19,21 @@
 		E2179E1115E56DDC006276EF /* TFPerson+CompositeName.h in Headers */ = {isa = PBXBuildFile; fileRef = E2179E0F15E56DDC006276EF /* TFPerson+CompositeName.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2179E1215E56DDC006276EF /* TFPerson+CompositeName.h in Headers */ = {isa = PBXBuildFile; fileRef = E2179E0F15E56DDC006276EF /* TFPerson+CompositeName.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2179E1315E56DDC006276EF /* TFPerson+CompositeName.m in Sources */ = {isa = PBXBuildFile; fileRef = E2179E1015E56DDC006276EF /* TFPerson+CompositeName.m */; };
-		E2179E1415E56DDC006276EF /* TFPerson+CompositeName.m in Sources */ = {isa = PBXBuildFile; fileRef = E2179E1015E56DDC006276EF /* TFPerson+CompositeName.m */; };
 		E2179E1515E56DDC006276EF /* TFPerson+CompositeName.m in Sources */ = {isa = PBXBuildFile; fileRef = E2179E1015E56DDC006276EF /* TFPerson+CompositeName.m */; };
-		E2179E1615E56DDC006276EF /* TFPerson+CompositeName.m in Sources */ = {isa = PBXBuildFile; fileRef = E2179E1015E56DDC006276EF /* TFPerson+CompositeName.m */; };
 		E2179E1815E56E35006276EF /* TFPerson+CompositeName.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2179E0F15E56DDC006276EF /* TFPerson+CompositeName.h */; };
 		E2722FC015E25C6F0057DB5E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2722FBF15E25C6F0057DB5E /* Cocoa.framework */; };
 		E2722FCA15E25C6F0057DB5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2722FC815E25C6F0057DB5E /* InfoPlist.strings */; };
-		E2722FD615E25C6F0057DB5E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2722FD515E25C6F0057DB5E /* SenTestingKit.framework */; };
-		E2722FD715E25C6F0057DB5E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2722FBF15E25C6F0057DB5E /* Cocoa.framework */; };
-		E2722FDA15E25C6F0057DB5E /* TFAddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2722FBC15E25C6F0057DB5E /* TFAddressBook.framework */; };
-		E2722FE015E25C6F0057DB5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2722FDE15E25C6F0057DB5E /* InfoPlist.strings */; };
 		E272302615E25F7F0057DB5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272302515E25F7F0057DB5E /* Foundation.framework */; };
-		E272303415E25F7F0057DB5E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2722FD515E25C6F0057DB5E /* SenTestingKit.framework */; };
-		E272303615E25F7F0057DB5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272303515E25F7F0057DB5E /* UIKit.framework */; };
-		E272303715E25F7F0057DB5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272302515E25F7F0057DB5E /* Foundation.framework */; };
-		E272303A15E25F800057DB5E /* libTFAddressBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E272302415E25F7F0057DB5E /* libTFAddressBook.a */; };
 		E272305B15E260240057DB5E /* TFAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = E272304C15E260240057DB5E /* TFAddressBook.m */; };
-		E272305C15E260240057DB5E /* TFAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = E272304C15E260240057DB5E /* TFAddressBook.m */; };
 		E272305D15E260240057DB5E /* TFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E272304E15E260240057DB5E /* TFGroup.m */; };
-		E272305E15E260240057DB5E /* TFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E272304E15E260240057DB5E /* TFGroup.m */; };
 		E272305F15E260240057DB5E /* TFMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305015E260240057DB5E /* TFMultiValue.m */; };
-		E272306015E260240057DB5E /* TFMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305015E260240057DB5E /* TFMultiValue.m */; };
 		E272306115E260240057DB5E /* TFMutableMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305215E260240057DB5E /* TFMutableMultiValue.m */; };
-		E272306215E260240057DB5E /* TFMutableMultiValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305215E260240057DB5E /* TFMutableMultiValue.m */; };
 		E272306315E260240057DB5E /* TFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305415E260240057DB5E /* TFPerson.m */; };
-		E272306415E260240057DB5E /* TFPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305415E260240057DB5E /* TFPerson.m */; };
 		E272306515E260240057DB5E /* TFRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305615E260240057DB5E /* TFRecord.m */; };
-		E272306615E260240057DB5E /* TFRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305615E260240057DB5E /* TFRecord.m */; };
 		E272306715E260240057DB5E /* TFSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305815E260240057DB5E /* TFSearchElement.m */; };
-		E272306815E260240057DB5E /* TFSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305815E260240057DB5E /* TFSearchElement.m */; };
 		E272306915E260240057DB5E /* TFBasicSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305A15E260240057DB5E /* TFBasicSearchElement.m */; };
-		E272306A15E260240057DB5E /* TFBasicSearchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E272305A15E260240057DB5E /* TFBasicSearchElement.m */; };
 		E272306E15E261970057DB5E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272306D15E261970057DB5E /* AddressBook.framework */; };
 		E272307215E261FF0057DB5E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E272307115E261FF0057DB5E /* AddressBook.framework */; };
-		E272307515E262420057DB5E /* TFAddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E272307415E262420057DB5E /* TFAddressBookTests.m */; };
-		E272307615E262420057DB5E /* TFAddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E272307415E262420057DB5E /* TFAddressBookTests.m */; };
 		E272307715E2633A0057DB5E /* TFABAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = E2722FCC15E25C6F0057DB5E /* TFABAddressBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2BE103515E369F80039BAED /* TFGlobals.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E272304A15E260240057DB5E /* TFGlobals.h */; };
 		E2BE103615E369F80039BAED /* TFAddressBook.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E272304B15E260240057DB5E /* TFAddressBook.h */; };
@@ -67,23 +47,6 @@
 		E2BE103E15E36A1B0039BAED /* TFGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = E272304A15E260240057DB5E /* TFGlobals.h */; };
 		E2BE104015E36ADC0039BAED /* TFGlobals.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E272306B15E2603A0057DB5E /* TFGlobals.h */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E2722FD815E25C6F0057DB5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E2722FB215E25C6F0057DB5E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E2722FBB15E25C6F0057DB5E;
-			remoteInfo = TFAddressBook;
-		};
-		E272303815E25F800057DB5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E2722FB215E25C6F0057DB5E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E272302315E25F7F0057DB5E;
-			remoteInfo = TFAddressBook_iOS;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E272302215E25F7F0057DB5E /* CopyFiles */ = {
@@ -129,13 +92,11 @@
 		E2722FC915E25C6F0057DB5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2722FCB15E25C6F0057DB5E /* TFAddressBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TFAddressBook-Prefix.pch"; sourceTree = "<group>"; };
 		E2722FCC15E25C6F0057DB5E /* TFABAddressBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFABAddressBook.h; sourceTree = "<group>"; };
-		E2722FD415E25C6F0057DB5E /* TFAddressBookTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFAddressBookTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2722FD515E25C6F0057DB5E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E2722FDD15E25C6F0057DB5E /* TFAddressBookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TFAddressBookTests-Info.plist"; sourceTree = "<group>"; };
 		E2722FDF15E25C6F0057DB5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E272302415E25F7F0057DB5E /* libTFAddressBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTFAddressBook.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E272302515E25F7F0057DB5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E272303315E25F7F0057DB5E /* TFAddressBook_iOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFAddressBook_iOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E272303515E25F7F0057DB5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E272304A15E260240057DB5E /* TFGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFGlobals.h; sourceTree = "<group>"; };
 		E272304B15E260240057DB5E /* TFAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAddressBook.h; sourceTree = "<group>"; };
@@ -171,33 +132,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2722FD015E25C6F0057DB5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2722FD615E25C6F0057DB5E /* SenTestingKit.framework in Frameworks */,
-				E2722FD715E25C6F0057DB5E /* Cocoa.framework in Frameworks */,
-				E2722FDA15E25C6F0057DB5E /* TFAddressBook.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E272302115E25F7F0057DB5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E272306E15E261970057DB5E /* AddressBook.framework in Frameworks */,
 				E272302615E25F7F0057DB5E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E272302F15E25F7F0057DB5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E272303415E25F7F0057DB5E /* SenTestingKit.framework in Frameworks */,
-				E272303615E25F7F0057DB5E /* UIKit.framework in Frameworks */,
-				E272303715E25F7F0057DB5E /* Foundation.framework in Frameworks */,
-				E272303A15E25F800057DB5E /* libTFAddressBook.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,9 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				E2722FBC15E25C6F0057DB5E /* TFAddressBook.framework */,
-				E2722FD415E25C6F0057DB5E /* TFAddressBookTests.octest */,
 				E272302415E25F7F0057DB5E /* libTFAddressBook.a */,
-				E272303315E25F7F0057DB5E /* TFAddressBook_iOSTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -372,9 +310,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E2722FBB15E25C6F0057DB5E /* TFAddressBook */ = {
+		E2722FBB15E25C6F0057DB5E /* TFAddressBook_OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2722FE615E25C6F0057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook" */;
+			buildConfigurationList = E2722FE615E25C6F0057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook_OSX" */;
 			buildPhases = (
 				E2722FB715E25C6F0057DB5E /* Sources */,
 				E2722FB815E25C6F0057DB5E /* Frameworks */,
@@ -386,33 +324,14 @@
 			);
 			dependencies = (
 			);
-			name = TFAddressBook;
+			name = TFAddressBook_OSX;
 			productName = TFAddressBook;
 			productReference = E2722FBC15E25C6F0057DB5E /* TFAddressBook.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E2722FD315E25C6F0057DB5E /* TFAddressBookTests */ = {
+		E272302315E25F7F0057DB5E /* TFAddressBook_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2722FE915E25C6F0057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBookTests" */;
-			buildPhases = (
-				E2722FCF15E25C6F0057DB5E /* Sources */,
-				E2722FD015E25C6F0057DB5E /* Frameworks */,
-				E2722FD115E25C6F0057DB5E /* Resources */,
-				E2722FD215E25C6F0057DB5E /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E2722FD915E25C6F0057DB5E /* PBXTargetDependency */,
-			);
-			name = TFAddressBookTests;
-			productName = TFAddressBookTests;
-			productReference = E2722FD415E25C6F0057DB5E /* TFAddressBookTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
-		E272302315E25F7F0057DB5E /* TFAddressBook_IOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E272304415E25F800057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook_IOS" */;
+			buildConfigurationList = E272304415E25F800057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook_iOS" */;
 			buildPhases = (
 				E272302015E25F7F0057DB5E /* Sources */,
 				E272302115E25F7F0057DB5E /* Frameworks */,
@@ -423,29 +342,10 @@
 			);
 			dependencies = (
 			);
-			name = TFAddressBook_IOS;
+			name = TFAddressBook_iOS;
 			productName = TFAddressBook_iOS;
 			productReference = E272302415E25F7F0057DB5E /* libTFAddressBook.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		E272303215E25F7F0057DB5E /* TFAddressBook_iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E272304715E25F800057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook_iOSTests" */;
-			buildPhases = (
-				E272302E15E25F7F0057DB5E /* Sources */,
-				E272302F15E25F7F0057DB5E /* Frameworks */,
-				E272303015E25F7F0057DB5E /* Resources */,
-				E272303115E25F7F0057DB5E /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E272303915E25F800057DB5E /* PBXTargetDependency */,
-			);
-			name = TFAddressBook_iOSTests;
-			productName = TFAddressBook_iOSTests;
-			productReference = E272303315E25F7F0057DB5E /* TFAddressBook_iOSTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -468,10 +368,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E2722FBB15E25C6F0057DB5E /* TFAddressBook */,
-				E2722FD315E25C6F0057DB5E /* TFAddressBookTests */,
-				E272302315E25F7F0057DB5E /* TFAddressBook_IOS */,
-				E272303215E25F7F0057DB5E /* TFAddressBook_iOSTests */,
+				E2722FBB15E25C6F0057DB5E /* TFAddressBook_OSX */,
+				E272302315E25F7F0057DB5E /* TFAddressBook_iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -485,51 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2722FD115E25C6F0057DB5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2722FE015E25C6F0057DB5E /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E272303015E25F7F0057DB5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E2722FD215E25C6F0057DB5E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		E272303115E25F7F0057DB5E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2722FB715E25C6F0057DB5E /* Sources */ = {
@@ -537,15 +391,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2179E1315E56DDC006276EF /* TFPerson+CompositeName.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2722FCF15E25C6F0057DB5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E272307515E262420057DB5E /* TFAddressBookTests.m in Sources */,
-				E2179E1415E56DDC006276EF /* TFPerson+CompositeName.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,37 +410,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E272302E15E25F7F0057DB5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E272305C15E260240057DB5E /* TFAddressBook.m in Sources */,
-				E272305E15E260240057DB5E /* TFGroup.m in Sources */,
-				E272306015E260240057DB5E /* TFMultiValue.m in Sources */,
-				E272306215E260240057DB5E /* TFMutableMultiValue.m in Sources */,
-				E272306415E260240057DB5E /* TFPerson.m in Sources */,
-				E272306615E260240057DB5E /* TFRecord.m in Sources */,
-				E272306815E260240057DB5E /* TFSearchElement.m in Sources */,
-				E272306A15E260240057DB5E /* TFBasicSearchElement.m in Sources */,
-				E272307615E262420057DB5E /* TFAddressBookTests.m in Sources */,
-				E2179E1615E56DDC006276EF /* TFPerson+CompositeName.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E2722FD915E25C6F0057DB5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E2722FBB15E25C6F0057DB5E /* TFAddressBook */;
-			targetProxy = E2722FD815E25C6F0057DB5E /* PBXContainerItemProxy */;
-		};
-		E272303915E25F800057DB5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E272302315E25F7F0057DB5E /* TFAddressBook_IOS */;
-			targetProxy = E272303815E25F800057DB5E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E2722FC815E25C6F0057DB5E /* InfoPlist.strings */ = {
@@ -677,7 +492,7 @@
 				GCC_PREFIX_HEADER = "TFAddressBook/TFAddressBook-Prefix.pch";
 				INFOPLIST_FILE = "TFAddressBook/TFAddressBook-Info.plist";
 				INSTALL_PATH = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TFAddressBook;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -694,34 +509,8 @@
 				INFOPLIST_FILE = "TFAddressBook/TFAddressBook-Info.plist";
 				INSTALL_PATH = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TFAddressBook;
 				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
-		E2722FEA15E25C6F0057DB5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TFAddressBook/TFAddressBook-Prefix.pch";
-				INFOPLIST_FILE = "TFAddressBookTests/TFAddressBookTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		E2722FEB15E25C6F0057DB5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TFAddressBook/TFAddressBook-Prefix.pch";
-				INFOPLIST_FILE = "TFAddressBookTests/TFAddressBookTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -762,45 +551,6 @@
 			};
 			name = Release;
 		};
-		E272304815E25F800057DB5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TFAddressBook_iOS/TFAddressBook_iOS-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "TFAddressBook_iOSTests/TFAddressBook_iOSTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		E272304915E25F800057DB5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TFAddressBook_iOS/TFAddressBook_iOS-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "TFAddressBook_iOSTests/TFAddressBook_iOSTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -813,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2722FE615E25C6F0057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook" */ = {
+		E2722FE615E25C6F0057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook_OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2722FE715E25C6F0057DB5E /* Debug */,
@@ -822,29 +572,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2722FE915E25C6F0057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBookTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2722FEA15E25C6F0057DB5E /* Debug */,
-				E2722FEB15E25C6F0057DB5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E272304415E25F800057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook_IOS" */ = {
+		E272304415E25F800057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E272304515E25F800057DB5E /* Debug */,
 				E272304615E25F800057DB5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E272304715E25F800057DB5E /* Build configuration list for PBXNativeTarget "TFAddressBook_iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E272304815E25F800057DB5E /* Debug */,
-				E272304915E25F800057DB5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

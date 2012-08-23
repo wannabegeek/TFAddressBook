@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TFAddressbook Mac.xcscheme</key>
+		<key>TFAddressBook OSX.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
@@ -12,11 +12,31 @@
 		<key>TFAddressbook iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>E2722FBB15E25C6F0057DB5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2722FD315E25C6F0057DB5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E272302315E25F7F0057DB5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E272303215E25F7F0057DB5E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E27358131486201400BCE1BB</key>
 		<dict>
 			<key>primary</key>
