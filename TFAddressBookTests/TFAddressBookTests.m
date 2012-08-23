@@ -7,7 +7,7 @@
 //
 
 #import "TFAddressBookTests.h"
-#import "TFABAddressBook.h"
+#import <TFAddressBook/TFABAddressBook.h>
 
 @implementation TFAddressBookTests
 
@@ -197,7 +197,7 @@
 		[addressDictionary setValue:@"First Line" forKey:kTFAddressStreetKey];
 		[addressDictionary setValue:@"My City" forKey:kTFAddressCityKey];
 		[addressDictionary setValue:@"My Country" forKey:kTFAddressCountryKey];
-		[multiValue insertValue:addressDictionary withLabel:[NSString stringWithFormat:@"Home %d", index] atIndex:index];
+		[multiValue insertValue:addressDictionary withLabel:[NSString stringWithFormat:@"Home %ld", index] atIndex:index];
 	}
 	
 	[person setValue:multiValue forProperty:kTFAddressProperty];

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TFAddressbook.xcodeproj">
+      location = "self:TFAddressBook.xcodeproj">
    </FileRef>
 </Workspace>
